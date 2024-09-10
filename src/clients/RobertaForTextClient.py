@@ -6,7 +6,7 @@ class RobertaForTextClient:
         """
         Initialize the RobertaForTextClient class
         """
-
+        # Define the URL for the API endpoint
         url = "http://localhost:8000/question_answering_roberta_text/"
 
         # Define the data to be sent in the request body

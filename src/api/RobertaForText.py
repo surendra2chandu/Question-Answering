@@ -23,10 +23,14 @@ def question_answering_from_text(questions: list[str], context: str):
     logger.info("Initialized the RobertaPipeline class with the specified model path")
 
     # Perform question answering
-    res = nlp(question=questions, context=context)
+    responses = nlp(question=questions, context=context)
     logger.info("Performed question answering")
 
-    print(type(res))
+    # Extract the answers from the responses
+    answers = list(map(lambda x: x['answer'], responses))
+
+    # Create a dictionary with questions as keys and answers as values
+    res = dict(zip(questions, answers))
 
     # Return the response
     return res

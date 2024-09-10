@@ -10,3 +10,7 @@ logger = logging.getLogger()
 
 # Define the model path
 model_path = r"C:\CHANDU\work\HuggingFace\deepsetroberta-base-squad2"
+
+# Specify text to be used as default answer
+default_answer = "Sorry, I don't have enough information to provide an answer."
+

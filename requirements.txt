@@ -1,3 +1,5 @@
 fastapi
 PyPDF2
 transformers
+pydantic
+requests

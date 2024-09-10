@@ -1,6 +1,6 @@
 # Importing necessary classes
 from root.src.conf.Configurations import logger, model_path
-from client.src.utilities.RobertaPipeline import RobertaPipeline
+from root.src.utilities.RobertaPipeline import RobertaPipeline
 
 
 def roberta_question_answering(questions: list[str], context: str):

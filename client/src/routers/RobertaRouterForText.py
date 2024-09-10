@@ -1,12 +1,12 @@
 # Importing necessary classes
 from fastapi import APIRouter
-from src.api import RobertaForText
+from client.src.api import RobertaForText
 from pydantic import BaseModel
 
 # Initialize the router
 router = APIRouter(
     prefix="/question_answering_roberta",
-    tags=["question-answering"],
+    tags=["question-answering-client"],
 )
 
 

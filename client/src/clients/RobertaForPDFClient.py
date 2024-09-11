@@ -8,7 +8,7 @@ class RobertaForPDFClient:
         """
 
         # Define the URL for the API endpoint
-        url = "http://localhost:8001/question_answering_roberta_pdf/"
+        url = "http://localhost:8001/question-answering-roberta_pdf/"
 
         # Define the data to be sent in the request body
         data = {
@@ -21,7 +21,8 @@ class RobertaForPDFClient:
         }
 
         # Send the POST request with JSON data and query parameter
-        response = requests.post(url, json=data, files=files)
+
+        response = requests.post(url, files=files, json=data)
 
         # Check if the response status code indicates success
         if response.ok:

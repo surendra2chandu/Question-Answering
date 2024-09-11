@@ -1,6 +1,8 @@
 # Importing necessary classes
 from fastapi import APIRouter
 from root.src.api import Roberta
+from pydantic import BaseModel
+from root.src.conf.Configurations import logger
 
 # Initialize the router
 router = APIRouter(
@@ -9,9 +11,16 @@ router = APIRouter(
 )
 
 
-@router.get("/")
-async def question_answering(questions: list[str], context: str) -> list:
+# Define the request body model
+class Questions(BaseModel):
+    questions: list[str]    # List of questions
 
-    responses = Roberta.roberta_question_answering(questions, context)
+
+@router.post("/")
+async def question_answering(questions: Questions, context: str) -> list:
+
+    # Call the roberta_question_answering function from Roberta.py
+    logger.info("Calling the roberta_question_answering function from Roberta.py")
+    responses = Roberta.roberta_question_answering(questions.questions, context)
 
     return responses

@@ -1,7 +1,6 @@
 # Importing necessary classes
 from client.src.conf.Configurations import logger, default_answer
-from client.src.utilities import InputValidations
-import requests
+from client.src.utilities import InputValidations, QAServiceManager
 
 
 def question_answering_from_text(questions: list[str], context: str):
@@ -17,21 +16,7 @@ def question_answering_from_text(questions: list[str], context: str):
     InputValidations.validate_list_obj(questions)
     logger.info("Validated that 'questions' is a list and not empty")
 
-    url = "http://localhost:8000/question_answering_roberta/"
-
-    # Define the data to be sent in the request body
-
-    # Sen the POST request with JSON data and query parameter
-    response = requests.get(url, json=questions, params={
-        "context": context})
-
-    print(response.json())
-
-    # Extract answers from the responses
-    answers = map(lambda x: x['answer'] if x['score'] > 0.1 else default_answer, response.json())
-
-    # Create a dictionary with questions as keys and answers as values
-    res = dict(zip(questions, answers))
+    res = QAServiceManager.qa_processing_pipeline(questions, context)
 
     # Return the response
     return res

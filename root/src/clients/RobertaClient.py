@@ -1,14 +1,13 @@
 import requests
 
 
-class RobertaForTextClient:
+class RobertaClient:
     def __init__(self):
         """
         Initialize the RobertaForTextClient class
         """
-
         # Define the URL for the API endpoint
-        url = "http://localhost:8001/question_answering_roberta_text/"
+        url = "http://localhost:8000/question_answering_roberta/"
 
         # Define the data to be sent in the request body
         data = {
@@ -31,5 +30,5 @@ class RobertaForTextClient:
 
 if __name__ == "__main__":
     # Initialize the RobertaForTextClient class
-    RobertaForTextClient()
+    RobertaClient()
 

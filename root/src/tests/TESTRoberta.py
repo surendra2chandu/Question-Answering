@@ -1,9 +1,9 @@
 # Import necessary Classes
 import unittest
-from client.src.api.RobertaForText import question_answering_from_text
+from root.src.api.Roberta import roberta_question_answering
 
 
-class TESTRobertaForText(unittest.TestCase):
+class TESTRoberta(unittest.TestCase):
     def setUp(self):
         """
         Initialize the sample context and questions
@@ -18,14 +18,13 @@ class TESTRobertaForText(unittest.TestCase):
         :return: None
         """
         # Call the question_answering_from_text function
-        result = question_answering_from_text(self.sample_questions, self.sample_context)
+        result = roberta_question_answering(self.sample_questions, self.sample_context)
 
         # Expected result
-        expected_result = {
-            "What is the capital of France?": "Paris",
-            "What is the tower name?": "Eiffel Tower",
-            "Who is Modi?": "Sorry, I don't have enough information to provide an answer."
-        }
+        expected_result = [{'score': 0.9595003724098206, 'start': 25, 'end': 30, 'answer': 'Paris'},
+                           {'score': 0.7237449884414673, 'start': 36, 'end': 48, 'answer': 'Eiffel Tower'},
+                           {'score': 2.543833033996634e-06, 'start': 25, 'end': 69,
+                            'answer': 'Paris. The Eiffel Tower is located in Paris.'}]
 
         # Check if the result is as expected
         self.assertEqual(result, expected_result)

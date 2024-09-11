@@ -1,3 +1,4 @@
+# Importing necessary classes
 from transformers import pipeline
 
 
@@ -17,6 +18,6 @@ class RobertaPipeline:
         :return: Roberta pipeline model
         """
 
-        #
+        # Return the Roberta pipeline model
         return self.nlp
 

@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 # Initialize the router
 router = APIRouter(
-    prefix="/question_answering_roberta",
+    prefix="/question-answering-roberta",
     tags=["question-answering-client"],
 )
 

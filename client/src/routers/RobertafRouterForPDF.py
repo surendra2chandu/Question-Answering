@@ -16,7 +16,7 @@ class Questions(BaseModel):
 
 
 # Define the route
-@router.post("/pdf/")
+@router.post("_pdf/")
 async def roberta_question_answering_from_pdf(questions: Questions, file: UploadFile = File(...)) -> dict:
 
     # Call the question_answering function from RobertaForPDF.py

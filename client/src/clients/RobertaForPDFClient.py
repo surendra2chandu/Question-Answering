@@ -1,14 +1,14 @@
 import requests
 
 
-class RobertaForTextClient:
+class RobertaForPDFClient:
     def __init__(self):
         """
         Initialize the RobertaForTextClient class
         """
 
         # Define the URL for the API endpoint
-        url = "http://localhost:8001/question_answering_roberta_text/"
+        url = "http://localhost:8001/question_answering_roberta_pdf/"
 
         # Define the data to be sent in the request body
         data = {
@@ -16,11 +16,12 @@ class RobertaForTextClient:
         }
 
         # Define the query parameters
-        params = {
-            "context": "The capital of France is Paris. The Eiffel Tower is located in Paris."}
+        files = {
+            'file': open(r'C:\CHANDU\work\example_data\examplefile.pdf', 'rb')
+        }
 
         # Send the POST request with JSON data and query parameter
-        response = requests.post(url, json=data, params=params)
+        response = requests.post(url, json=data, files=files)
 
         # Check if the response status code indicates success
         if response.ok:
@@ -31,5 +32,5 @@ class RobertaForTextClient:
 
 if __name__ == "__main__":
     # Initialize the RobertaForTextClient class
-    RobertaForTextClient()
+    RobertaForPDFClient()
 

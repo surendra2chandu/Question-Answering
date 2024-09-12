@@ -21,6 +21,6 @@ async def question_answering(questions: Questions, context: str) -> list:
 
     # Call the roberta_question_answering function from Roberta.py
     logger.info("Calling the roberta_question_answering function from Roberta.py")
-    responses = Roberta.roberta_question_answering(questions.questions, context)
+    response = Roberta.roberta_question_answering(questions.questions, context)
 
-    return responses
+    return response

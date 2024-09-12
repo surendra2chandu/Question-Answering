@@ -14,7 +14,7 @@ def validate_list_obj(data: list[str]):
         raise HTTPException(status_code=422, detail=f"data must be a non-empty list of strings: {data}")
 
 
-def validate_pdf(file: UploadFile):
+async def validate_pdf(file: UploadFile):
     """
     This function validates the file extension and raises an HTTP 400 error if it is not a PDF file.
     :param file: The file to be validated.
@@ -27,7 +27,7 @@ def validate_pdf(file: UploadFile):
 
     try:
         # reading the uploaded file
-        file.read()
+        await file.read()
 
     # Handling the fIle not found error
     except FileNotFoundError:

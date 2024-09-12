@@ -10,19 +10,19 @@ class RobertaForPDFClient:
         # Define the URL for the API endpoint
         url = "http://localhost:8001/question-answering-roberta_pdf/"
 
-        # Define the data to be sent in the request body
+        # Define the form data (questions should be sent as a form field)
         data = {
-            "questions": ["What is the capital of France?", "What is the tower name?", "Who is Modi?"]
+            'questions': ["what is title of given file?", "who is author?", "what is file name?",
+                          "What is the capital of France?", "what is tower name?", "who is modi?"]
         }
 
-        # Define the query parameters
+        # Define the file to be uploaded
         files = {
             'file': open(r'C:\CHANDU\work\example_data\examplefile.pdf', 'rb')
         }
 
-        # Send the POST request with JSON data and query parameter
-
-        response = requests.post(url, files=files, json=data)
+        # Send the POST request with form data and file
+        response = requests.post(url, files=files, data=data)
 
         # Check if the response status code indicates success
         if response.ok:

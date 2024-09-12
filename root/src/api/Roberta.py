@@ -1,6 +1,7 @@
 # Importing necessary classes
 from root.src.conf.Configurations import logger, model_path
 from root.src.utilities.RobertaPipeline import RobertaPipeline
+from root.src.utilities import InputValidations
 
 
 def roberta_question_answering(questions: list[str], context: str) -> list:
@@ -12,16 +13,25 @@ def roberta_question_answering(questions: list[str], context: str) -> list:
     """
     logger.info("Received a request to perform question answering using Roberta model")
 
+    # Validate that 'questions' is a list and not empty
+    InputValidations.validate_list_obj(questions)
+
     # Initialize the RobertaPipeline class with the specified model path
     logger.info("Loaded the model")
 
     # Initialize the RobertaPipeline class with the specified model path
     nlp = RobertaPipeline(model_path).get_qa_model()
     logger.info("Initialized the RobertaPipeline class with the specified model path")
-
+    print("before  = ", questions)
+    print("context = ", context)
     # Perform question answering
     responses = nlp(question=questions, context=context)
     logger.info("Performed question answering")
+    print(type(questions))
+    print(type(context))
+    print("After= ", questions)
+    print("context = ", context)
+    print("responses", responses)
 
     return responses
 

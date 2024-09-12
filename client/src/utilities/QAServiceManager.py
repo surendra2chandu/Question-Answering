@@ -1,6 +1,7 @@
 # Import necessary classes
 import requests
 from client.src.conf.Configurations import logger, default_answer
+from fastapi import HTTPException
 
 
 def qa_processing_pipeline(questions: list[str], context: str):
@@ -12,12 +13,20 @@ def qa_processing_pipeline(questions: list[str], context: str):
     response = requests.post(url, json={"questions": questions}, params={
         "context": context})
 
-    # Extract answers from the responses
-    logger.info("Extracting answers from the responses")
-    answers = map(lambda x: x['answer'] if x['score'] > 0.1 else default_answer, response.json())
+    if response.status_code == 200:
+        try:
+            answers = map(lambda x: x['answer'] if x['score'] > 0.1 else default_answer, response.json())
+            # Create a dictionary with questions as keys and answers as values
+            logger.info("Creating a dictionary with questions as keys and answers as values")
+            res = dict(zip(questions, answers))
+            return res
+        except ValueError as e:
+            logger.error(f"Error occurred while parsing the response: {e}")
+            raise HTTPException(status_code=500, detail="Error occurred while parsing the response{e},"
+                                                        " and the response is {response.json()}")
 
-    # Create a dictionary with questions as keys and answers as values
-    logger.info("Creating a dictionary with questions as keys and answers as values")
-    res = dict(zip(questions, answers))
+    else:
+        logger.error(f"Error occurred while sending the request: {response.text}")
+        raise HTTPException(status_code=500, detail=f"Error occurred while sending the request: {response.text}")
 
-    return res
+

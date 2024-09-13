@@ -24,13 +24,14 @@ def extract_text_from_pdf(file: UploadFile):
         data += pdf.pages[i].extract_text().strip()
 
     # Remove special characters
-    data = re.sub(r'[^\w\s]', '', data)
+    # data = re.sub(r'[^\w\s]', '', data)
+
+    data = ' '.join(data.split())
 
     metadata_str = ""
     for key, value in pdf.metadata.items():
         metadata_str += key[1:] + ": " + value + "\n"
     metadata_str += "File metadata, File name: "+file.filename + "\n"
 
-    print(metadata_str + data)
     # Return the pdf data
     return metadata_str + data

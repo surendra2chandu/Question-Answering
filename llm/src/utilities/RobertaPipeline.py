@@ -3,7 +3,6 @@ from transformers import pipeline
 from llm.src.conf.Configurations import model_path
 
 
-
 class RobertaPipeline:
     def __init__(self):
         """

@@ -18,15 +18,15 @@ class Prompt(BaseModel):
 
 
 @router.post("/roberta/")
-async def question_answering(data: Prompt):
+async def question_answering(prompt: Prompt):
     """
     This function is used to perform question answering using the Roberta model
-    :param data: Required data. It contains questions and context
+    :param prompt: Required data. It contains questions and context
     :return: List of responses. It contains the answers to the questions.
     """
 
     # Call the roberta_question_answering function from Roberta.py
     logger.info("Calling the roberta_question_answering function from Roberta.py")
-    response = roberta_question_answering(data.questions, data.context)
+    response = roberta_question_answering(prompt.questions, prompt.context)
 
     return response

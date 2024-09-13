@@ -1,6 +1,6 @@
 # Import necessary Classes
 import unittest
-from rag_service.src.api.RobertaForText import question_answering_from_text
+from question_answering_services.src.api.RobertaForText import question_answering_from_text
 
 
 class TESTRobertaForText(unittest.TestCase):

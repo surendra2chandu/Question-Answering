@@ -7,13 +7,12 @@ class RobertaClient:
         Initialize the RobertaForTextClient class
         """
         # Define the URL for the API endpoint
-        url = "http://localhost:8000/question_answering_roberta/"
+        url = "http://localhost:8000/llm/roberta/"
 
         # Define the data to be sent in the request body
         data = {
             "questions": ["What is the capital of France?", "What is the tower name?", "Who is Modi?"],
             "context": "The capital of France is Paris. The Eiffel Tower is located in Paris."
-
         }
 
         # Send the POST request with JSON data and query parameter

@@ -1,6 +1,6 @@
 # Importing necessary classes
-from rag_service.src.conf.Configurations import logger, default_answer
-from rag_service.src.utilities import InputValidations, QAServiceManager
+from question_answering_services.src.conf.Configurations import logger
+from question_answering_services.src.utilities import InputValidations, QAServiceManager
 
 
 def question_answering_from_text(questions: list[str], context: str):

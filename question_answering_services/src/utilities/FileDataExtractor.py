@@ -1,6 +1,6 @@
 # Importing necessary classes
 import PyPDF2
-from rag_service.src.conf.Configurations import logger
+from question_answering_services.src.conf.Configurations import logger, NUMBER_OF_PDF_PAGES_TO_READ
 from fastapi import UploadFile
 import re
 
@@ -20,11 +20,17 @@ def extract_text_from_pdf(file: UploadFile):
     data = ""
 
     # Iterate over the pages
-    for i in range(len(pdf.pages)):
-        data += pdf.pages[i].extract_text()
+    for i in range(min(NUMBER_OF_PDF_PAGES_TO_READ, len(pdf.pages))):
+        data += pdf.pages[i].extract_text().strip()
 
     # Remove special characters
     data = re.sub(r'[^\w\s]', '', data)
 
+    metadata_str = ""
+    for key, value in pdf.metadata.items():
+        metadata_str += key[1:] + ": " + value + "\n"
+    metadata_str += "File metadata, File name: "+file.filename + "\n"
+
+    print(metadata_str + data)
     # Return the pdf data
-    return str(pdf.metadata) + data
+    return metadata_str + data

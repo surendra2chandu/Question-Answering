@@ -1,7 +1,7 @@
 # Importing necessary classes
 from fastapi import UploadFile, File
-from rag_service.src.conf.Configurations import logger
-from rag_service.src.utilities import InputValidations, FileDataExtractor, QAServiceManager
+from question_answering_services.src.conf.Configurations import logger
+from question_answering_services.src.utilities import InputValidations, FileDataExtractor, QAServiceManager
 from io import BytesIO
 
 
@@ -12,6 +12,7 @@ def question_answering_from_pdf(questions: list[str], file: UploadFile = File(..
     :param file: PDF file
     :return: Response from the question_answering function
     """
+
     logger.info("Received a request to perform question answering using Roberta model")
 
     # Validate the PDF file

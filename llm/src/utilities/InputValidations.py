@@ -11,4 +11,4 @@ def validate_list_obj(data: list[str]):
     """
 
     if not isinstance(data, list) or not data:
-        raise HTTPException(status_code=422, detail=f"data must be a non-empty list of strings: {data}")
+        raise HTTPException(status_code=400, detail=f"data must be a non-empty list of strings: {data}")

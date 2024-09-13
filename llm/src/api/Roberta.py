@@ -1,5 +1,5 @@
 # Importing necessary classes
-from llm.src.conf.Configurations import logger, model_path
+from llm.src.conf.Configurations import logger
 from llm.src.utilities.RobertaPipeline import RobertaPipeline
 from llm.src.utilities import InputValidations
 
@@ -20,7 +20,7 @@ def roberta_question_answering(questions: list[str], context: str) -> list:
     logger.info("Loaded the model")
 
     # Initialize the RobertaPipeline class with the specified model path
-    nlp = RobertaPipeline(model_path).get_qa_model()
+    nlp = RobertaPipeline().get_qa_model()
     logger.info("Initialized the RobertaPipeline class with the specified model path")
 
     # Perform question answering

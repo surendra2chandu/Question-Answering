@@ -1,9 +1,11 @@
 # Importing necessary classes
 from transformers import pipeline
+from llm.src.conf.Configurations import model_path
+
 
 
 class RobertaPipeline:
-    def __init__(self, model_path):
+    def __init__(self):
         """
         This function initializes the RobertaPipeline class with the specified model path.
         :param model_path: str - Path to the Roberta model

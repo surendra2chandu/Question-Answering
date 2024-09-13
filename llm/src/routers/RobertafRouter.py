@@ -1,27 +1,32 @@
 # Importing necessary classes
 from fastapi import APIRouter
-from llm.src.api import Roberta
+from llm.src.api.Roberta import roberta_question_answering
 from pydantic import BaseModel
 from llm.src.conf.Configurations import logger
 
 # Initialize the router
 router = APIRouter(
-    prefix="/question_answering_roberta",
-    tags=["question-answering-llm"],
+    prefix="/llm",
+    tags=["core-llm-system"],
 )
 
 
 # Define the request body model
-class Questions(BaseModel):
+class Prompt(BaseModel):
     questions: list[str]    # List of questions
     context: str           # Context for the questions
 
 
-@router.post("/")
-async def question_answering(data: Questions):
+@router.post("/roberta/")
+async def question_answering(data: Prompt):
+    """
+    This function is used to perform question answering using the Roberta model
+    :param data: Required data. It contains questions and context
+    :return: List of responses. It contains the answers to the questions.
+    """
 
     # Call the roberta_question_answering function from Roberta.py
     logger.info("Calling the roberta_question_answering function from Roberta.py")
-    response = Roberta.roberta_question_answering(data.questions, data.context)
+    response = roberta_question_answering(data.questions, data.context)
 
     return response

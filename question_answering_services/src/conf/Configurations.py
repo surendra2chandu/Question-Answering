@@ -8,5 +8,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
 # Specify text to be used as default answer
-default_answer = "Sorry, I don't have enough information to provide an answer."
+default_answer = "Sorry, I don't have precise information to provide an answer."
 
+# Default no of pages to read from pdf
+NUMBER_OF_PDF_PAGES_TO_READ = 5

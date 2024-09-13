@@ -9,7 +9,7 @@ class RobertaForPDFClient:
         """
 
         # Define the URL for the API endpoint
-        url = "http://localhost:8001/question-answering-roberta_pdf/"
+        url = "http://localhost:8001/question_answering/roberta_pdf/"
 
         # Define the form data (questions should be sent as a form field)
         data = {

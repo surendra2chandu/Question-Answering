@@ -28,10 +28,10 @@ async def validate_pdf(file: UploadFile):
     try:
         # reading the uploaded file
         await file.read()
-
+        await file.close()
     # Handling the fIle not found error
     except FileNotFoundError:
-        raise HTTPException(status_code=404, detail="File not found")
+        raise HTTPException(status_code=404, detail="Cannot read the file.")
 
     # Handling the file read error
     except Exception as e:

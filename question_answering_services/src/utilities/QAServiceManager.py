@@ -1,12 +1,12 @@
 # Import necessary classes
 import requests
-from rag_service.src.conf.Configurations import logger, default_answer
+from question_answering_services.src.conf.Configurations import logger, default_answer
 from fastapi import HTTPException
 
 
 def qa_processing_pipeline(questions: list[str], context: str):
 
-    url = "http://localhost:8000/question_answering_roberta/"
+    url = "http://localhost:8000/llm/roberta/"
 
     # Sen the POST request with JSON data and query parameter
     logger.info("Sending the POST request with JSON data and query parameter")
@@ -31,10 +31,11 @@ def qa_processing_pipeline(questions: list[str], context: str):
 
             # Return the dictionary
             return res
+
         except ValueError as e:
             logger.error(f"Error occurred while parsing the response: {e}")
-            raise HTTPException(status_code=500, detail="Error occurred while parsing the response{e},"
-                                                        " and the response is {response.json()}")
+            raise HTTPException(status_code=500, detail=f"Error occurred while parsing the response{e},"
+                                                        f" and the response is {response.json()}")
 
     else:
         logger.error(f"Error occurred while sending the request: {response.text}")

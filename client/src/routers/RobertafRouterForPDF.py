@@ -1,3 +1,4 @@
+
 # Importing necessary classes
 from fastapi import APIRouter, UploadFile, File, Form
 from client.src.api import RobertaForPDF
@@ -16,8 +17,5 @@ async def roberta_question_answering_from_pdf(questions: list[str] = Form(...), 
     # Call the question_answering function from RobertaForPDF.py
     res = RobertaForPDF.question_answering_from_pdf(questions, file)
 
-    # Return the response
+    # Return the res
     return res
-
-
-

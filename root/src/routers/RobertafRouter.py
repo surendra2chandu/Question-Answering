@@ -14,13 +14,14 @@ router = APIRouter(
 # Define the request body model
 class Questions(BaseModel):
     questions: list[str]    # List of questions
+    context: str           # Context for the questions
 
 
 @router.post("/")
-async def question_answering(questions: Questions, context: str) -> list:
+async def question_answering(data: Questions):
 
     # Call the roberta_question_answering function from Roberta.py
     logger.info("Calling the roberta_question_answering function from Roberta.py")
-    response = Roberta.roberta_question_answering(questions.questions, context)
+    response = Roberta.roberta_question_answering(data.questions, data.context)
 
     return response

@@ -1,3 +1,4 @@
+
 import requests
 
 
@@ -34,4 +35,3 @@ class RobertaForPDFClient:
 if __name__ == "__main__":
     # Initialize the RobertaForTextClient class
     RobertaForPDFClient()
-

@@ -22,16 +22,10 @@ def roberta_question_answering(questions: list[str], context: str) -> list:
     # Initialize the RobertaPipeline class with the specified model path
     nlp = RobertaPipeline(model_path).get_qa_model()
     logger.info("Initialized the RobertaPipeline class with the specified model path")
-    print("before  = ", questions)
-    print("context = ", context)
+
     # Perform question answering
     responses = nlp(question=questions, context=context)
     logger.info("Performed question answering")
-    print(type(questions))
-    print(type(context))
-    print("After= ", questions)
-    print("context = ", context)
-    print("responses", responses)
 
     return responses
 

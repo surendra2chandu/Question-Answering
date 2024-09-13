@@ -11,15 +11,13 @@ class RobertaClient:
 
         # Define the data to be sent in the request body
         data = {
-            "questions": ["What is the capital of France?", "What is the tower name?", "Who is Modi?"]
+            "questions": ["What is the capital of France?", "What is the tower name?", "Who is Modi?"],
+            "context": "The capital of France is Paris. The Eiffel Tower is located in Paris."
+
         }
 
-        # Define the query parameters
-        params = {
-            "context": "The capital of France is Paris. The Eiffel Tower is located in Paris."}
-
         # Send the POST request with JSON data and query parameter
-        response = requests.post(url, json=data, params=params)
+        response = requests.post(url, json=data)
 
         # Check if the response status code indicates success
         if response.ok:

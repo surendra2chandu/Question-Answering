@@ -1,6 +1,6 @@
 # Import necessary classes
 import requests
-from client.src.conf.Configurations import logger, default_answer
+from rag_service.src.conf.Configurations import logger, default_answer
 from fastapi import HTTPException
 
 

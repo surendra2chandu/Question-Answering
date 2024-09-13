@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from client.src.routers.RobertafRouterForPDF import router as roberta_pdf_router
-from client.src.routers.RobertaRouterForText import router as roberta_text_router
+from rag_service.src.routers.RobertafRouterForPDF import router as roberta_pdf_router
+from rag_service.src.routers.RobertaRouterForText import router as roberta_text_router
 
 
 # Initialize the FastAPI app

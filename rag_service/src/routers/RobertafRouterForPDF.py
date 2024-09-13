@@ -1,12 +1,12 @@
 
 # Importing necessary classes
 from fastapi import APIRouter, UploadFile, File, Form
-from client.src.api import RobertaForPDF
+from rag_service.src.api import RobertaForPDF
 
 # Initialize the router
 router = APIRouter(
     prefix="/question-answering-roberta",
-    tags=["question-answering-client"]
+    tags=["question-answering-rag_service"]
 )
 
 

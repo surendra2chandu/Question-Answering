@@ -1,7 +1,7 @@
 # Importing necessary classes
 from fastapi import UploadFile, File
-from client.src.conf.Configurations import logger
-from client.src.utilities import InputValidations, FileDataExtractor, QAServiceManager
+from rag_service.src.conf.Configurations import logger
+from rag_service.src.utilities import InputValidations, FileDataExtractor, QAServiceManager
 from io import BytesIO
 
 

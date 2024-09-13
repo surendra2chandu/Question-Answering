@@ -1,13 +1,13 @@
 # Importing necessary classes
 from fastapi import APIRouter
-from root.src.api import Roberta
+from llm.src.api import Roberta
 from pydantic import BaseModel
-from root.src.conf.Configurations import logger
+from llm.src.conf.Configurations import logger
 
 # Initialize the router
 router = APIRouter(
     prefix="/question_answering_roberta",
-    tags=["question-answering-root"],
+    tags=["question-answering-llm"],
 )
 
 

@@ -1,6 +1,6 @@
 # Importing necessary classes
 import PyPDF2
-from client.src.conf.Configurations import logger
+from rag_service.src.conf.Configurations import logger
 from fastapi import UploadFile
 import re
 

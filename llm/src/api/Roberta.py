@@ -1,7 +1,7 @@
 # Importing necessary classes
-from root.src.conf.Configurations import logger, model_path
-from root.src.utilities.RobertaPipeline import RobertaPipeline
-from root.src.utilities import InputValidations
+from llm.src.conf.Configurations import logger, model_path
+from llm.src.utilities.RobertaPipeline import RobertaPipeline
+from llm.src.utilities import InputValidations
 
 
 def roberta_question_answering(questions: list[str], context: str) -> list:

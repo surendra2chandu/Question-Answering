@@ -3,3 +3,5 @@ PyPDF2
 transformers
 pydantic
 requests
+llama_cpp
+langchain

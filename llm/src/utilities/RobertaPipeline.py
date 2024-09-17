@@ -1,6 +1,6 @@
 # Importing necessary classes
 from transformers import pipeline
-from llm.src.conf.Configurations import model_path
+from llm.src.conf.Configurations import roberta_model_path
 
 
 class RobertaPipeline:
@@ -11,7 +11,7 @@ class RobertaPipeline:
         """
 
         # Load the Roberta pipeline model using the specified model path
-        self.nlp = pipeline("question-answering", model=model_path, tokenizer=model_path)
+        self.nlp = pipeline("question-answering", model=roberta_model_path, tokenizer=roberta_model_path)
 
     def get_qa_model(self):
         """

@@ -1,6 +1,6 @@
 # Importing necessary classes
 from fastapi import APIRouter
-from llm.src.api.Llama2ChatGGUF import llama2_chat_ggu_question_answering
+from llm.src.api.Llama2 import llama2_chat_ggu_question_answering
 from pydantic import BaseModel
 
 # Initialize the router
@@ -27,7 +27,7 @@ async def llama2_chat_gguf(prompt: Prompt):
     :return: List of responses. It contains the answers to the questions.
     """
 
-    # Call the llama2chat_gguf function from Llama2ChatGGUF.py
+    # Call the llama2chat_gguf function from Llama2.py
     response = llama2_chat_ggu_question_answering(prompt.context, prompt.question)
 
     return response

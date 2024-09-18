@@ -25,7 +25,7 @@ def process_llama2_request(context: str, question: str):
             res = response.json()
 
             # Return the response
-            return res['choices'][0]['text']
+            return {question: res}
 
         except ValueError as e:
             logger.error(f"Error occurred while parsing the response: {e}")

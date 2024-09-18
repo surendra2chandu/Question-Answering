@@ -1,6 +1,6 @@
 # Importing necessary classes
 from fastapi import APIRouter
-from question_answering_services.src.api import CustomLlama2ChatGGUF
+from question_answering_services.src.api.Llama2ForText import question_answering_for_text
 from pydantic import BaseModel
 
 # Initialize the router
@@ -17,16 +17,16 @@ class Prompt(BaseModel):
 
 
 # Define the route
-@router.post("/llama2/")
-async def llama2_question_answering(prompt: Prompt):
+@router.post("/llama2_text/")
+async def llama2_question_answering_for_text(prompt: Prompt):
     """
         This function is used to perform question answering using the Llama2ChatGGUF model
         :param prompt: Required data. It contains the prompt
         :return: List of responses. It contains the answers to the questions.
         """
 
-    # Call the question_answering_from_text function from RobertaForText.py
-    res = CustomLlama2ChatGGUF.question_answering(prompt.question, prompt.context)
+    # Call the question_answering_from_text function from Llama2ForText.py
+    res = question_answering_for_text(prompt.context, prompt.question)
 
     # Return the response
     return res

@@ -12,8 +12,8 @@ class Llama2ChatGGUFClient:
 
         # Define the data to be sent in the request body
         prompt = {
-            "context": "In the solar system, there are eight primary planets that orbit the sun.",
-            "question": "Name the eight planets in the solar system?"
+            "context": "The capital of France is Paris. The Eiffel Tower is located in Paris.",
+            "question": "What is the capital of France?"
         }
 
         # Send the POST request with JSON data and query parameter

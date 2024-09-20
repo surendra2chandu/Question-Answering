@@ -2,7 +2,7 @@
 import requests
 
 
-class CustomLlama2ChatGGUFClient:
+class Llama2ForTextClient:
     def __init__(self):
         """
         This class is a client for the Custom Llama2ChatGGUF API endpoint.
@@ -29,5 +29,5 @@ class CustomLlama2ChatGGUFClient:
 
 if __name__ == "__main__":
     # Initialize the CustomLlama2ChatGGUFClient class
-    CustomLlama2ChatGGUFClient()
+    Llama2ForTextClient()
 

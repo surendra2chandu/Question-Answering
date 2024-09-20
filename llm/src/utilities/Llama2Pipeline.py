@@ -13,7 +13,7 @@ class Llama2Pipeline:
         callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
 
         # Load the GGUF model using the specified model path
-        self.llm = LlamaCpp(model_path=llama2_model_path, temperature=0.3, max_tokens=128, top_p=0.9,
+        self.llm = LlamaCpp(model_path=llama2_model_path, temperature=0.01, max_tokens=128, top_p=0.98,
                             Callback_manager=callback_manager, verbose=True)
 
     def get_llm_model(self):

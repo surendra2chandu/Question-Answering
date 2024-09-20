@@ -2,7 +2,7 @@
 import requests
 
 
-class CustomLlama2ChatGGUFClient:
+class Llama2ForPDFClient:
     def __init__(self):
         """
         This class is a client for the Custom Llama2ChatGGUF API endpoint.
@@ -13,7 +13,7 @@ class CustomLlama2ChatGGUFClient:
 
         # Define the data to be sent in the request body
         prompt = {
-            "question": "Name the eight planets in the solar system?"
+            "question": "What is the capital of france?"
         }
         # Define the file to be uploaded
         files = {
@@ -32,5 +32,5 @@ class CustomLlama2ChatGGUFClient:
 
 if __name__ == "__main__":
     # Initialize the CustomLlama2ChatGGUFClient class
-    CustomLlama2ChatGGUFClient()
+    Llama2ForPDFClient()
 

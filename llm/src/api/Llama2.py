@@ -15,23 +15,15 @@ def llama2_chat_ggu_question_answering(context: str, question: str):
     logger.info("Received a request to perform question answering using Llama2ChatGGUF model")
 
     # Enforcing that the model should strictly answer from context or say "I don't know"
-    pre_prompt = """[INST] <<SYS>>\nYou are a concise assistant. Only use the given context to answer the question.
-            If the answer is not in the context, reply with exactly "I don't know". 
-            Your answer must strictly use words found only in the context. 
-            Do not guess or generate answers from external knowledge. Your answer must be between 2 and 10 words.\n<<SYS>>\n\n
-            Example:
-            CONTEXT: Water boils at 100 degrees Celsius at standard atmospheric pressure.
-            QUESTION1: At what temperature does water boil?
-            ANSWER1: 100 degrees Celsius
-            QUESTION2: What is the capital of France?
-            ANSWER2: I don't know
-            Now, based on the given context and question, provide an answer following the same format.
-            \n<<SYS>>\n\n"""
+    pre_prompt = """[INST] <<SYS>>"Answer based on context<<SYS>>"""
 
-    template = pre_prompt + "CONTEXT:\n{context}\n" + "QUESTION:\n{question}\n" + "[INST]"
+    template = pre_prompt + f"CONTEXT:\n{context}\n" + f"QUESTION:\n{question}\n" + "[INST]"
 
-    prompt = PromptTemplate(template=template, input_variables=["context", "question"])
+    print(template)
 
+    prompt = PromptTemplate(template=template)
+
+    print(prompt)
     llm = Llama2Pipeline().get_llm_model()
 
     # Generate the response from the model
@@ -42,8 +34,8 @@ def llama2_chat_ggu_question_answering(context: str, question: str):
 
 if __name__ == "__main__":
     # Sample context and question
-    sample_context = "In the solar system, there are eight primary planets that orbit the sun."
-    sample_question = "Name the eight planets in solar system?"
+    sample_context = "The capital of France is Paris. The Eiffel Tower is located in Paris."
+    sample_question = "What is the capital of France??"
 
     # Perform question answering using the Llama2ChatGGUF model
     res = llama2_chat_ggu_question_answering(sample_context, sample_question)

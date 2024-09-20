@@ -20,8 +20,8 @@ def question_answering_for_text(context: str, question: str):
 
 if __name__ == "__main__":
     # Sample context and question
-    sample_context = "In the solar system, there are eight primary planets that orbit the sun."
-    sample_question = "Name the eight planets in the solar system?"
+    sample_context = "The capital of France is Paris. The Eiffel Tower is located in Paris."
+    sample_question = "What is the capital of France?"
 
     # Perform question answering using the Llama2ChatGGUF model
     res = question_answering_for_text(sample_context, sample_question)

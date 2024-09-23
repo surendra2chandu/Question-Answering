@@ -17,11 +17,10 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
     # Enforcing that the model should strictly answer from context or say "I don't know"
     pre_prompt = f"""[INST] <<SYS>>f"Use the following pieces of information to answer the user's queries.
     If you don't know the answer, just say that you don't know, don't try to make up an answer.
-    
     Context: {context}
     Question: {questions}
     Only return the helpful answer below and nothing else.
-    Helpful answer:" <<SYS>>"""
+    Helpful answer:"<<SYS>>"""
 
 
     # Create a template for the prompt

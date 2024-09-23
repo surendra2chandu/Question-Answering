@@ -1,3 +1,4 @@
+
 # Importing necessary classes
 import PyPDF2
 from question_answering_services.src.conf.Configurations import logger, NUMBER_OF_PDF_PAGES_TO_READ
@@ -28,10 +29,10 @@ def extract_text_from_pdf(file: UploadFile):
 
     data = ' '.join(data.split())
 
-    metadata_str = ""
+    """metadata_str = ""
     for key, value in pdf.metadata.items():
         metadata_str += key[1:] + ": " + value + "\n"
-    metadata_str += "File metadata, File name: "+file.filename + "\n"
+    metadata_str += "File metadata, File name: "+file.filename + "\n" """
 
     # Return the pdf data
-    return metadata_str + data
+    return data

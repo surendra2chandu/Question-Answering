@@ -2,16 +2,17 @@
 import requests
 from question_answering_services.src.conf.Configurations import logger
 from fastapi import HTTPException
+import re
 
 
-def process_llama2_request(context: str, question: str):
+def process_llama2_request(context: str, questions: list[str]):
     # Define the URL for the Llama2ChatGGUF model
     url = "http://localhost:8000/llm/llama2/"
 
     # Define the data to be sent in the request body
     prompt = {
-        "context": context,
-        "question": question
+        "questions": questions,
+        "context": context
     }
 
     # Sen the POST request with JSON data and query parameter
@@ -23,9 +24,10 @@ def process_llama2_request(context: str, question: str):
             # Get the answer from the response
             logger.info("Getting the answer from the response")
             res = response.json()
-
+            print(res)
+            answer = res.partition('Helpful answer:" <<SYS>>')[2].strip()
             # Return the response
-            return {question: res}
+            return dict(zip(questions, answer.split(".")))
 
         except ValueError as e:
             logger.error(f"Error occurred while parsing the response: {e}")

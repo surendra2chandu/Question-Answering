@@ -1,5 +1,5 @@
 # Importing necessary classes
-from fastapi import APIRouter, UploadFile, File
+from fastapi import APIRouter, UploadFile, File, Form
 from question_answering_services.src.api.Llama2ForPDF import question_answering_for_pdf
 
 
@@ -12,15 +12,15 @@ router = APIRouter(
 
 # Define the route
 @router.post("/llama2_pdf/")
-async def llama2_question_answering_for_pdf(question: str, file: UploadFile = File(...)):
+async def llama2_question_answering_for_pdf(questions: list[str] = Form(...), file: UploadFile = File(...)):
     """"
     This function is used to perform question answering using the Llama2ChatGGUF model
-    :param question: Required question to be answered
+    :param questions: Required list of questions
     :param file: Required pdf file
     :return:
     """
     # Call the question_answering_from_text function from Llama2ForPDF.py
-    res = question_answering_for_pdf(question, file)
+    res = question_answering_for_pdf(questions, file)
 
     # Return the response
     return res

@@ -12,16 +12,16 @@ class Llama2ForPDFClient:
         url = "http://localhost:8001/question_answering/llama2_pdf/"
 
         # Define the data to be sent in the request body
-        prompt = {
-            "question": "What is the capital of france?"
+        data = {
+            "questions": ["What is the capital of France?", "What is the tower name?", "Who is Modi?"]
         }
         # Define the file to be uploaded
         files = {
-            'file': open(r'C:\CHANDU\work\example_data\example.pdf', 'rb')
+            'file': open(r'D:\example.pdf', 'rb')
         }
 
         # Send the POST request with JSON data and query parameter
-        response = requests.post(url, json=prompt, files=files)
+        response = requests.post(url, files=files, data=data)
 
         # Check if the response status code indicates success
         if response.ok:

@@ -10,13 +10,10 @@ router = APIRouter(
 )
 
 
-# Define the prompt structure
+# Define the request body model
 class Prompt(BaseModel):
-    """
-    This class is used to define the prompt structure
-    """
-    context: str    # The context in which to answer the question
-    question: str   # The question to be answered based on the context
+    questions: list[str]    # List of questions
+    context: str           # Context for the questions
 
 
 @router.post("/llama2/")
@@ -28,6 +25,6 @@ async def llama2_chat_gguf(prompt: Prompt):
     """
 
     # Call the llama2chat_gguf function from Llama2.py
-    response = llama2_chat_ggu_question_answering(prompt.context, prompt.question)
+    response = llama2_chat_ggu_question_answering(prompt.context, prompt.questions)
 
     return response

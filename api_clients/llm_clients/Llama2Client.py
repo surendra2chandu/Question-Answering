@@ -11,13 +11,13 @@ class Llama2ChatGGUFClient:
         url = "http://localhost:8000/llm/llama2/"
 
         # Define the data to be sent in the request body
-        prompt = {
-            "context": "The capital of France is Paris. The Eiffel Tower is located in Paris.",
-            "question": "What is the capital of France?"
+        data = {
+            "questions": ["What is the capital of France?", "What is the tower name?", "Who is Modi?"],
+            "context": "The capital of France is Paris. The Eiffel Tower is located in Paris."
         }
 
         # Send the POST request with JSON data and query parameter
-        response = requests.post(url, json=prompt)
+        response = requests.post(url, json=data)
 
         # Check if the response status code indicates success
         if response.ok:

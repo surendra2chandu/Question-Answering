@@ -6,10 +6,10 @@ from question_answering_services.src.utilities import InputValidations, FileData
 from io import BytesIO
 
 
-def question_answering_for_pdf(question: str, file: UploadFile = File(...)):
+def question_answering_for_pdf(questions: list[str], file: UploadFile = File(...)):
     """
     This function is used to perform question answering using the Llama2ChatGGUF model.
-    :param question: Required question to be answered
+    :param questions: Required list of questions
     :param file: Required pdf file
     :return:
     """
@@ -24,7 +24,7 @@ def question_answering_for_pdf(question: str, file: UploadFile = File(...)):
     context = FileDataExtractor.extract_text_from_pdf(file)
 
     # Call the question_answering_from_pdf function from Llama2ForPDF.py
-    response = process_llama2_request(context, question)
+    response = process_llama2_request(context, questions)
 
     return response
 
@@ -32,13 +32,13 @@ def question_answering_for_pdf(question: str, file: UploadFile = File(...)):
 if __name__ == "__main__":
     # Sample data
     logger.info("Starting the question_answering_for_pdf function")
-    sample_question = "what is title of given file?"
+    sample_questions = ["What is the capital of France?", "What is the tower name?", "Who is Modi?"]
     sample_file = UploadFile(filename="examplefile.pdf",
-                             file=BytesIO(open(r'C:\CHANDU\work\example_data\example.pdf', 'rb').read()))
+                             file=BytesIO(open(r'D:\Example.pdf', 'rb').read()))
 
     # Call the question_answering_for_pdf function
     logger.info("Calling the question_answering_for_pdf function")
-    result = question_answering_for_pdf(sample_question, sample_file)
+    result = question_answering_for_pdf(sample_questions, sample_file)
 
     # Print the result
     logger.info("Printing the result")

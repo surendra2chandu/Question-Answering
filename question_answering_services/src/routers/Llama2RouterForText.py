@@ -12,8 +12,8 @@ router = APIRouter(
 
 # Define the request body model
 class Prompt(BaseModel):
-    question: str   # Question to be answered
-    context: str     # Context for the question
+    questions: list[str]    # List of questions
+    context: str           # Context for the questions
 
 
 # Define the route
@@ -26,7 +26,7 @@ async def llama2_question_answering_for_text(prompt: Prompt):
         """
 
     # Call the question_answering_from_text function from Llama2ForText.py
-    res = question_answering_for_text(prompt.context, prompt.question)
+    res = question_answering_for_text(prompt.context, prompt.questions)
 
     # Return the response
     return res

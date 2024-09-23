@@ -12,13 +12,13 @@ class Llama2ForTextClient:
         url = "http://localhost:8001/question_answering/llama2_text/"
 
         # Define the data to be sent in the request body
-        prompt = {
-            "context": "In the solar system, there are eight primary planets that orbit the sun.",
-            "question": "Name the eight planets in the solar system?"
+        data = {
+            "questions": ["What is the capital of France?", "What is the tower name?", "Who is Modi?"],
+            "context": "The capital of France is Paris. The Eiffel Tower is located in Paris."
         }
 
         # Send the POST request with JSON data and query parameter
-        response = requests.post(url, json=prompt)
+        response = requests.post(url, json=data)
 
         # Check if the response status code indicates success
         if response.ok:

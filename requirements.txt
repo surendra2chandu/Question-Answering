@@ -1,7 +1,7 @@
 fastapi
-PyPDF2
+PyPDF2==1.26.0
 transformers
 pydantic
 requests
-llama_cpp
+llama-cpp-python
 langchain

@@ -15,6 +15,7 @@ router = APIRouter(
 class Prompt(BaseModel):
     questions: list[str]    # List of questions
     context: str           # Context for the questions
+    prompt: Optional[str] = None
 
 
 @router.post("/roberta/")

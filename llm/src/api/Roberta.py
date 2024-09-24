@@ -1,12 +1,12 @@
-# Importing necessary classes
+# Import necessary classes
 from llm.src.conf.Configurations import logger
-from llm.src.utilities.RobertaPipeline import RobertaPipeline
+from llm.src.utilities.RobertaPipeline import RobertaPipelineVLLM
 from llm.src.utilities import InputValidations
 
 
 def roberta_question_answering(questions: list[str], context: str) -> list:
     """
-    This function is used to perform question answering using the Roberta model
+    This function performs question answering using the vllm Roberta model.
     :param questions: List of questions
     :param context: Text context
     :return: List of responses
@@ -16,16 +16,16 @@ def roberta_question_answering(questions: list[str], context: str) -> list:
     # Validate that 'questions' is a list and not empty
     InputValidations.validate_list_obj(questions)
 
-    # Initialize the RobertaPipeline class with the specified model path
-    logger.info("Loaded the model")
+    # Initialize the RobertaPipelineVLLM class
+    nlp = RobertaPipelineVLLM()
+    logger.info("Initialized the RobertaPipelineVLLM class")
 
-    # Initialize the RobertaPipeline class with the specified model path
-    nlp = RobertaPipeline().get_qa_model()
-    logger.info("Initialized the RobertaPipeline class with the specified model path")
-
-    # Perform question answering
-    responses = nlp(question=questions, context=context)
-    logger.info("Performed question answering")
+    # Perform question answering for each question
+    responses = []
+    for question in questions:
+        response = nlp.get_qa_model(question=question, context=context)
+        responses.append(response)
+        logger.info(f"Performed question answering for question: {question}")
 
     return responses
 
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     # Sample data
     logger.info("Starting the question_answering_from_text function")
     sample_context = "The capital of France is Paris. The Eiffel Tower is located in Paris."
-    sample_questions = ["What is the capital of France?", "what is tower name?", "who is modi?"]
+    sample_questions = ["What is the capital of France?", "What is the tower name?", "Who is Modi?"]
 
     # Call the question_answering_from_text function
     logger.info("Calling the question_answering_from_text function")

@@ -1,5 +1,6 @@
+# This file lists all the dependencies that are required by the project
 fastapi
-PyPDF2>2.0.0
+PyPDF2
 transformers
 pydantic
 requests
@@ -7,8 +8,9 @@ llama-cpp-python
 langchain_core
 langchain_community
 langchain
-ctransformers
-vllm
-xformers
-torch
-triton
+#ctransformers
+#torch
+#vllm
+#xformers
+
+#triton

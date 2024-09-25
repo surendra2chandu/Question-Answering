@@ -15,15 +15,11 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
     logger.info("Received a request to perform question answering using Llama2ChatGGUF model")
 
     # Enforcing that the model should strictly answer from context or say "I don't know"
-    pre_prompt = f"""[INST] <<SYS>>f"{default_prompt}
-    Context: {context}
-    Question: {questions}
-    Only return the helpful answer below and nothing else.
-    Helpful answer:"<<SYS>>"""
+    pre_prompt = f"""[INST] <<SYS>> f"{default_prompt}" <<SYS>>"""
 
 
     # Create a template for the prompt
-    template = pre_prompt + f"CONTEXT:\n{context}\n" + f"QUESTION:\n{questions}\n" + "[INST]"
+    template = pre_prompt + "CONTEXT:\n{context}\n" + "QUESTION:\n{questions}\n" + "[INST]"
 
     # Create a prompt template
     prompt = PromptTemplate(template=template)
@@ -35,7 +31,7 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
 
     # Generate the response from the model
     logger.info("Generating response from Llama2 model")
-    response = llm.invoke(prompt.format(context=context, question=questions)).strip()
+    response = llm.invoke(prompt.format(context=context, questions=questions)).strip()
 
     return response
 
@@ -43,7 +39,7 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
 if __name__ == "__main__":
     # Sample context and question
     sample_context = "The capital of France is Paris. The Eiffel Tower is located in Paris."
-    sample_questions = ["What is the capital of France?", "Where Eiffel Tower is Located?"]
+    sample_questions = ["What is the capital of France?", "Where Eiffel Tower is Located?", "What is the capital of Germany?"]
 
     # Perform question answering using the Llama2ChatGGUF model
     res = llama2_chat_ggu_question_answering(sample_context, sample_questions)

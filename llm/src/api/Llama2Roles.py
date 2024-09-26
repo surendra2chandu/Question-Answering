@@ -1,9 +1,5 @@
 # Importing necessary classes
-from langchain.chains.question_answering.map_reduce_prompt import messages
-
 from llm.src.conf.Configurations import logger, default_prompt1, default_prompt2, default_prompt3
-from langchain_core.prompts import PromptTemplate
-from llama_cpp import Llama
 from llm.src.utilities.Llama2Pipeline import Llama2Pipeline
 
 
@@ -29,31 +25,17 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
     user_msg = f"CONTEXT:{context} \n QUESTION:{questions}"
     #user_msg = f"CONTEXT: {context} \n QUESTIONS: {' \n'.join(questions)}"
 
-    logger.info(f"Generating response for questions: {questions}")
-
-    prompt = f"""<s> [INST] <<SYS>>
-    As an AI assistant,Provide one word answers, you will answer questions based strictly on the given context.If the answer cannot be found in the context, respond with "Answer not found in context".
-    <</SYS >>
-    ###Context: {context}\n
-    ###Questions: {questions}[/INST] </s>"""
-    """
-    # Generate the response using create_chat_completion
-    response = llm.invoke(
-        input=[
-            {"role": "system", "content": system_msg},
-            {"role": "user", "content": user_msg}
-        ],
-        max_tokens=100)
-    """
-
+    # Prepare the prompts
     prompts = [
         {"role": "system", "content": system_msg},
         {"role": "user", "content": user_msg}
     ]
+
+    # Invoke the Llama2 model
+    logger.info("Invoking Llama2 model")
     response = llm.invoke(input=prompts)
 
-    #response = llm.invoke(prompt)
-
+    # Return the response
     return response
 
 

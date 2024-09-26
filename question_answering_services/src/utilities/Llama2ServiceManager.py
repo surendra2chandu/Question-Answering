@@ -24,10 +24,8 @@ def process_llama2_request(context: str, questions: list[str]):
             # Get the answer from the response
             logger.info("Getting the answer from the response")
             res = response.json()
-            print(res)
-            answer = res.partition('Helpful answer:" <<SYS>>')[2].strip()
-            # Return the response
-            return dict(zip(questions, answer.split(".")))
+            answers = [line.split(":")[1].strip() for line in res.splitlines() if "Answer:" in line]
+            return dict(zip(questions, answers))
 
         except ValueError as e:
             logger.error(f"Error occurred while parsing the response: {e}")

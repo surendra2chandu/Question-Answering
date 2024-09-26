@@ -15,12 +15,10 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
     logger.info("Received a request to perform question answering using Llama2ChatGGUF model")
 
     # Enforcing that the model should strictly answer from context or say "I don't know"
-    pre_prompt = f"""[INST] \n<<SYS>>{default_prompt1} <</SYS>>\n"""
-
-    #pre_prompt = f"""[INST] \n<<SYS>> {default_prompt}<</SYS>>\n"""
+    pre_prompt = f"""<s>[INST] \n<<SYS>>{default_prompt2} <</SYS>>\n"""
 
     # Create a template for the prompt
-    template = pre_prompt + "###CONTEXT:\n{context}\n" + "###QUESTION:\n{questions}\n" + "[/INST]"
+    template = pre_prompt + "###CONTEXT:\n{context}\n" + "###QUESTIONS:\n{questions}\n" + "[/INST]</s>"
 
     # Create a prompt template
     prompt = PromptTemplate(template=template)

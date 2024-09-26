@@ -32,7 +32,7 @@ def question_answering_for_pdf(questions: list[str], file: UploadFile = File(...
 if __name__ == "__main__":
     # Sample data
     logger.info("Starting the question_answering_for_pdf function")
-    sample_questions = ["What is the capital of France?", "What is the tower name?", "Who is Modi?"]
+    sample_questions = ["What is the capital of France?", "Where Eiffel Tower is Located?", "What is the capital of Germany?"]
     sample_file = UploadFile(filename="examplefile.pdf",
                              file=BytesIO(open(r'D:\Example.pdf', 'rb').read()))
 

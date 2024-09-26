@@ -13,7 +13,7 @@ class Llama2ForPDFClient:
 
         # Define the data to be sent in the request body
         data = {
-            "questions": ["What is the capital of France?", "What is the tower name?", "Who is Modi?"]
+            "questions": ["What is the capital of France?", "Where Eiffel Tower is Located?", "What is the capital of Germany?"]
         }
         # Define the file to be uploaded
         files = {

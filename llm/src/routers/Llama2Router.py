@@ -3,7 +3,7 @@ from fastapi import APIRouter
 from llm.src.api.Llama2PromptTemplate import llama2_chat_ggu_question_answering
 from pydantic import BaseModel
 from typing import Optional
-from llm.src.conf.Configurations import default_prompt
+#from llm.src.conf.Configurations import default_prompt
 
 # Initialize the router
 router = APIRouter(
@@ -16,7 +16,7 @@ router = APIRouter(
 class Prompt(BaseModel):
     questions: list[str]    # List of questions
     context: str           # Context for the questions
-    prompt: Optional[str] = default_prompt  # Prompt for the questions
+    #prompt: Optional[str] = default_prompt  # Prompt for the questions
 
 
 @router.post("/llama2/")

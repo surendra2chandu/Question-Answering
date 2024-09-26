@@ -1,8 +1,9 @@
 # Importing necessary classes
 from fastapi import APIRouter
-from llm.src.api.Roberta import roberta_question_answering
+from llm.src.api.Roberta import question_answering_from_text
 from pydantic import BaseModel
 from llm.src.conf.Configurations import logger
+from typing import Optional
 
 # Initialize the router
 router = APIRouter(
@@ -28,6 +29,6 @@ async def question_answering(prompt: Prompt):
 
     # Call the roberta_question_answering function from Roberta.py
     logger.info("Calling the roberta_question_answering function from Roberta.py")
-    response = roberta_question_answering(prompt.questions, prompt.context)
+    response = question_answering_from_text(prompt.questions, prompt.context)
 
     return response

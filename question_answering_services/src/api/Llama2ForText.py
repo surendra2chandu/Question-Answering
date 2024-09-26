@@ -21,7 +21,7 @@ def question_answering_for_text(context: str, questions: list[str]):
 if __name__ == "__main__":
     # Sample context and question
     sample_context = "The capital of France is Paris. The Eiffel Tower is located in Paris."
-    sample_questions = ["What is the capital of France?", "What is the tower name?", "Who is Modi?"]
+    sample_questions = ["What is the capital of France?", "Where Eiffel Tower is Located?", "What is the capital of Germany?"]
 
     # Perform question answering using the Llama2ChatGGUF model
     res = question_answering_for_text(sample_context, sample_questions)

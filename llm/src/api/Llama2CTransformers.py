@@ -1,5 +1,5 @@
 from ctransformers import AutoModelForCausalLM
-from llm.src.conf.Configurations import llama2_model_path, logger
+from llm.src.conf.Configurations import llama2_model_path, logger, default_prompt3
 
 # Log loading message
 logger.info("Loading Llama2 model")
@@ -14,7 +14,7 @@ queries = ["What is the capital of france", "What is the capital of India?"]
 
 # Log generation message
 # Prepare the prompt for the model with clearer instructions
-# prompt = f"""Answer based on context. If the answer cannot be found in the context, respond with 'ER001: I cannot find answer in context. :\n\n{context}\n\n{query}"""
+#prompt = f"{default_prompt3}" :\n\n{context}\n\n{query}
 prompt = ( f"""Use the following pieces of information to answer the user's queries.
 If you don't know the answer, just say that you don't know, don't try to make up an answer.
 Context: {context}
@@ -24,7 +24,7 @@ Helpful answer:
 """
 )
 
-print(prompt)
+
 # Log generation message
 logger.info("Generating response from Llama2 model")
 

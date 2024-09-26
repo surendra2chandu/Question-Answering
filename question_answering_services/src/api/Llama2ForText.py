@@ -12,7 +12,7 @@ def question_answering_for_text(context: str, questions: list[str]):
     """
     logger.info("Received a request to perform question answering using Llama2ChatGGUF model")
 
-    # Call the llama2_chat_gguf function from Llama2.py
+    # Call the llama2_chat_gguf function from Llama2PromptTemplate.py
     response = process_llama2_request(context, questions)
 
     return response

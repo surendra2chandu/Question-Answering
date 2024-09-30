@@ -19,7 +19,6 @@ def extract_text_from_pdf(file: UploadFile):
 
     # Initialize the data and add the metadata
     data = ""
-
     # Iterate over the pages
     for i in range(min(NUMBER_OF_PDF_PAGES_TO_READ, len(pdf.pages))):
         data += pdf.pages[i].extract_text().strip()
@@ -27,13 +26,9 @@ def extract_text_from_pdf(file: UploadFile):
     # Remove special characters
     # data = re.sub(r'[^\w\s]', '', data)
 
-    data = ' '.join(data.split())
+    meta_data_info = pdf.metadata
 
-    metadata_str = ""
-    for key, value in pdf.metadata.items():
-        metadata_str += key[1:] + ": " + value + "\n"
-    # metadata_str += "File metadata, File name: "+file.filename + "\n"
-
+    print(meta_data_info)
 
     # Return the pdf data
-    return metadata_str + data
+    return str(meta_data_info) + data

@@ -23,9 +23,6 @@ def qa_processing_pipeline(questions: list[str], context: str):
                 # Create a dictionary with questions as keys and answers as values
                 return {questions[0]: res}
 
-            # Get the answers from the response
-            for j,i in zip(questions, response.json()):
-                print(j, i)
             answers = map(lambda x: x['answer'] if x['score'] > 0.0001 else default_answer, response.json())
 
             # Create a dictionary with questions as keys and answers as values

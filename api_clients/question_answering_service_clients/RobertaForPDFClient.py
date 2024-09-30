@@ -13,13 +13,13 @@ class RobertaForPDFClient:
 
         # Define the form data (questions should be sent as a form field)
         data = {
-            'questions': ["what is title of given document?", "who is author?", "What is the version of the file?",
+            'questions': ["what is title of given document?", "who is author of the document?", "What is the version of the document?",
                           "What is the capital of France?"]
         }
 
         # Define the file to be uploaded
         files = {
-            'file': open(r'D:\doc2.pdf', 'rb')
+            'file': open(r'D:\doc1.pdf', 'rb')
         }
 
         # Send the POST request with form data and file

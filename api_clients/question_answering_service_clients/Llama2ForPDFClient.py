@@ -17,7 +17,7 @@ class Llama2ForPDFClient:
         }
         # Define the file to be uploaded
         files = {
-            'file': open(r'D:\example.pdf', 'rb')
+            'file': open(r'D:\doc2.pdf', 'rb')
         }
 
         # Send the POST request with JSON data and query parameter

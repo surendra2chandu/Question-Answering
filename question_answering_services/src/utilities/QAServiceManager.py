@@ -17,13 +17,16 @@ def qa_processing_pipeline(questions: list[str], context: str):
             if len(questions) == 1:
                 # Get the answer from the response
                 logger.info("Getting the answer from the response")
-                res = response.json()['answer'] if response.json()['score'] > 0.1 else default_answer
+
+                res = response.json()['answer'] if response.json()['score'] > 0.0001 else default_answer
 
                 # Create a dictionary with questions as keys and answers as values
                 return {questions[0]: res}
 
             # Get the answers from the response
-            answers = map(lambda x: x['answer'] if x['score'] > 0.1 else default_answer, response.json())
+            for j,i in zip(questions, response.json()):
+                print(j, i)
+            answers = map(lambda x: x['answer'] if x['score'] > 0.0001 else default_answer, response.json())
 
             # Create a dictionary with questions as keys and answers as values
             logger.info("Creating a dictionary with questions as keys and answers as values")

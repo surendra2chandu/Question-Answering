@@ -28,7 +28,5 @@ def extract_text_from_pdf(file: UploadFile):
 
     meta_data_info = pdf.metadata
 
-    print(meta_data_info)
-
     # Return the pdf data
     return str(meta_data_info) + data

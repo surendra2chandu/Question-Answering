@@ -24,8 +24,18 @@ def process_llama2_request(context: str, questions: list[str]):
             # Get the answer from the response
             logger.info("Getting the answer from the response")
             res = response.json()
+
+            # Print the response
             print("res", res)
+
+            # Extracting the answers from the response
             answers = [line.split(":")[1].strip() for line in res.splitlines() if "Answer:" in line]
+
+            #answers = re.findall(r'\?.*?\.\s*(.*?)(?:\.|\n)', res, re.DOTALL)
+            # Filtering out empty answers and stripping any extra spaces
+            #answers = [answer.strip() for answer in answers if answer.strip()]
+
+            # Create a dictionary of questions and answers
             return dict(zip(questions, answers))
 
         except ValueError as e:

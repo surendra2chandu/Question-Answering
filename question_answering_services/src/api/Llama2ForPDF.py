@@ -34,8 +34,7 @@ def question_answering_for_pdf(questions: list[str], file: UploadFile = File(...
 if __name__ == "__main__":
     # Sample data
     logger.info("Starting the question_answering_for_pdf function")
-    sample_questions = ["what is title of given file?", "who is author?", "what is file name?",
-                        "What is the capital of France?", "What is the version of the file?"]
+    sample_questions = ["what is title of given file?", "who is author?", "what is file name?", "What is the version of the file?"]
     sample_file = UploadFile(filename="doc2.pdf",
                              file=BytesIO(open(r'D:\doc2.pdf', 'rb').read()))
 

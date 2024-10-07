@@ -1,6 +1,6 @@
 from ctransformers import AutoModelForCausalLM
 from llm.src.conf.Configurations import llama2_model_path, logger
-from llm.src.conf.Prompts import default_prompt2, default_prompt1, default_prompt3, default_prompt4
+# from llm.src.conf.Prompts import default_prompt2, default_prompt1, default_prompt3, default_prompt4
 
 # Log loading message
 logger.info("Loading Llama2 model")

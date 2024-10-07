@@ -1,22 +1,20 @@
-# Use the latest CUDA 11.6 runtime image for Ubuntu 20.04
-FROM nvidia/cuda:11.6.2-runtime-ubuntu20.04
+# Start from an official Python image that already has common dependencies
+FROM python:3.10-bullseye
 
-# Install Python and dependencies
-RUN apt-get update && apt-get install -y python3-pip git
+# Install system dependencies
+RUN apt-get update && apt-get install -y build-essential git curl
 
-# Set the working directory inside the container
-WORKDIR /llm
+# Set the working directory
+WORKDIR /app
 
-# Copy your project files into the container
-COPY llm /src
+# Copy the requirements file and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install vLLM and other dependencies
-RUN pip3 install vllm fastapi uvicorn
+# Copy the rest of the application code
+COPY . .
 
-# Expose port 8000 for FastAPI
+# Expose the port and run the app
 EXPOSE 8000
 
-# Command to run your script
-CMD ["python3", "llm/src/main.py"]
-
-#
+CMD ["python", "others/del.py"]

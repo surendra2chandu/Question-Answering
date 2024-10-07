@@ -1,9 +1,11 @@
 # This file lists all the dependencies that are required by the project
-fastapi
-PyPDF2
-transformers
-pydantic
-requests
-langchain_core
-langchain_community
-langchain
+vllm
+uvicorn
+#fastapi
+#PyPDF2
+#transformers
+#pydantic
+#requests
+#langchain_core
+#langchain_community
+#vllm

@@ -22,7 +22,9 @@ def question_answering_for_pdf(questions: list[str], file: UploadFile = File(...
     # Extract text from the PDF file
     logger.info("Extracting text from the PDF file")
     context = FileDataExtractor.extract_text_from_pdf(file)
-    print("context",context)
+
+    # print("context",context)
+
     # Call the question_answering_from_pdf function from Llama2ForPDF.py
     response = process_llama2_request(context, questions)
 
@@ -34,8 +36,8 @@ if __name__ == "__main__":
     logger.info("Starting the question_answering_for_pdf function")
     sample_questions = ["what is title of given file?", "who is author?", "what is file name?",
                         "What is the capital of France?", "What is the version of the file?"]
-    sample_file = UploadFile(filename="doc.pdf",
-                             file=BytesIO(open(r'D:\doc.pdf', 'rb').read()))
+    sample_file = UploadFile(filename="doc2.pdf",
+                             file=BytesIO(open(r'D:\doc2.pdf', 'rb').read()))
 
     # Call the question_answering_for_pdf function
     logger.info("Calling the question_answering_for_pdf function")

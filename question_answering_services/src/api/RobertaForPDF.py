@@ -25,7 +25,7 @@ def question_answering_from_pdf(questions: list[str], file: UploadFile = File(..
     # Extract text from the PDF file
     logger.info("Extracting text from the PDF file")
     context = FileDataExtractor.extract_text_from_pdf(file)
-    print("context", context)
+    # print("context", context)
     # Perform question answering
     logger.info("Performing question answering")
     res = QAServiceManager.qa_processing_pipeline(questions, context)
@@ -40,8 +40,8 @@ if __name__ == "__main__":
     logger.info("Starting the question_answering_from_pdf function")
     sample_questions = ["what is title of given file?", "who is author?", "what is file name?",
                         "What is the capital of France?", "What is the version of the file?"]
-    sample_file = UploadFile(filename="doc1.pdf",
-                             file=BytesIO(open(r'D:\doc1.pdf', 'rb').read()))
+    sample_file = UploadFile(filename="doc2.pdf",
+                             file=BytesIO(open(r'D:\doc2.pdf', 'rb').read()))
 
     # Call the question_answering_from_pdf function
     logger.info("Calling the question_answering_from_pdf function")

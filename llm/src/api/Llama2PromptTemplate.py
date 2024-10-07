@@ -19,10 +19,13 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
     pre_prompt = f"""<s>[INST] \n<<SYS>>{default_prompt2} <</SYS>>\n"""
 
     # Create a template for the prompt
-    template = pre_prompt + "###CONTEXT:\n{context}\n" + "###QUESTIONS:\n{questions}\n" + "[/INST]</s>"
+    template = pre_prompt + "###CONTEXT:\n{context}\n" + "###QUESTIONS:\n{questions}\n" + "[/INST]"
+
+    template = pre_prompt + "CONTEXT:\n\n{context}\n" + "Questions : {questions}" + "[\INST]"
+
 
     # Create a prompt template
-    prompt = PromptTemplate(template=template)
+    prompt = PromptTemplate(template=template, input_variables=["context", "question"])
 
     #print(prompt)
     # Load the Llama2 model
@@ -38,8 +41,8 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
 
 if __name__ == "__main__":
     # Sample context and question
-    sample_context = "The capital of France is Paris. The Eiffel Tower is located in Paris."
-    sample_questions = ["What is the capital of France?", "Where Eiffel Tower is Located?", "What is the capital of Germany?"]
+    sample_context = "The capital of France is Paris. The Eiffel Tower is located in Paris. India is a country in Asia."
+    sample_questions = [ "What is the capital of Germany?", "What is the capital of France?", "Where Eiffel Tower is Located?"]
 
     # Perform question answering using the Llama2ChatGGUF model
     res = llama2_chat_ggu_question_answering(sample_context, sample_questions)

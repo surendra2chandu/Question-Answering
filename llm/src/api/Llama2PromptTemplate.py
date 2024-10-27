@@ -19,12 +19,13 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
     pre_prompt = f"""<s>[INST] \n<<SYS>>{default_prompt1} <</SYS>>\n"""
 
     # Create a template for the prompt
-    template = pre_prompt + "###CONTEXT:\n{context}\n" + "###QUESTIONS:\n{questions}\n" + "[/INST]"
+    template = pre_prompt + "###CONTEXT:\n{context}\n" + "###QUESTION:\n{question}\n" + "[/INST]"
 
-    template = pre_prompt + "CONTEXT:\n\n{context}\n" + "Questions : {questions}" + "[\INST]"
+    template = pre_prompt + "CONTEXT:\n\n{context}\n" + "Question : {question}" + "[\INST]"
 
 
     # Create a prompt template
+
     prompt = PromptTemplate(template=template, input_variables=["context", "question"])
 
     #print(prompt)
@@ -32,9 +33,13 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
     logger.info("Loading Llama2 model")
     llm = Llama2Pipeline().get_llm_model()
 
+    response = []
     # Generate the response from the model
     logger.info("Generating response from Llama2 model")
-    response = llm.invoke(prompt.format(context=context, questions=questions)).strip()
+
+    for question in questions:
+        res = llm.invoke(prompt.format(context=context, question=question)).strip()
+        response.append(res)
 
     return response
 
@@ -45,7 +50,7 @@ if __name__ == "__main__":
     sample_questions = [ "What is the capital of Germany?", "What is the capital of France?", "Where Eiffel Tower is Located?"]
 
     # Perform question answering using the Llama2ChatGGUF model
-    res = llama2_chat_ggu_question_answering(sample_context, sample_questions)
+    sample_res = llama2_chat_ggu_question_answering(sample_context, sample_questions)
 
     # Print the response
-    print(res)
+    print(sample_res)

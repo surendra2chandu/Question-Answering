@@ -38,10 +38,10 @@ def question_answering_from_pdf(questions: list[str], file: UploadFile = File(..
 if __name__ == "__main__":
     # Sample data
     logger.info("Starting the question_answering_from_pdf function")
-    sample_questions = ["what is title of given file?", "who is author?", "what is file name?",
+    sample_questions = ["what is title of given file?", "what is creation date of document?", "what is file name?",
                         "What is the capital of France?", "What is the version of the file?"]
     sample_file = UploadFile(filename="doc2.pdf",
-                             file=BytesIO(open(r'D:\doc2.pdf', 'rb').read()))
+                             file=BytesIO(open(r'D:\Documents\doc2.pdf', 'rb').read()))
 
     # Call the question_answering_from_pdf function
     logger.info("Calling the question_answering_from_pdf function")

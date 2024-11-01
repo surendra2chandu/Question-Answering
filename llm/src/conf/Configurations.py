@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
 # Define the Roberta model path
-roberta_model_path = R"D:\LLM\deepsetroberta-base-squad2"
+roberta_model_path = R"C:\llm\deepsetroberta-base-squad2"
 
 # Define the Llama2 model path
-llama2_model_path = r"D:\LLM\llama-2-7b-chat.Q2_K.gguf"
+llama2_model_path = r"C:\llm\llama-2-7b-chat.Q2_K.gguf"

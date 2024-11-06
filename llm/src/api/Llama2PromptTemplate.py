@@ -1,4 +1,6 @@
 # Importing necessary classes
+from sys import maxsize
+
 from llm.src.conf.Configurations import logger
 from llm.src.conf.Prompts import default_prompt2, default_prompt1, default_prompt3, default_prompt4
 from langchain_core.prompts import PromptTemplate
@@ -38,7 +40,7 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
     logger.info("Generating response from Llama2 model")
 
     for question in questions:
-        res = llm.invoke(prompt.format(context=context, question=question)).strip()
+        res = llm.invoke(prompt.format(context=context, question=question, maxsize=2000)).strip()
         response.append(res)
 
     return response

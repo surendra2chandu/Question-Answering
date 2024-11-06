@@ -18,14 +18,16 @@ def qa_with_ollama(context: str, questions: list[str]):
 
     responses = []
 
+
+
     for question in questions:
+
+        user_prompt = f"The question is: {question} \n\n The context is: {context}"
         # Define messages in the chat format with "system," "user," and "content"
         message = [
             {"role": "system",
              "content": default_prompt1},
-            {"role": "user", "content": question},
-            {"role": "assistant",
-             "content": context}]
+            {"role": "user", "content": user_prompt}]
 
         # Invoke the model with the chat structure
         try:

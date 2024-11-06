@@ -21,10 +21,11 @@ def qa_with_ollama(context: str, questions: list[str]):
     pre_prompt = f"""{default_prompt1}"""
 
     # Define the prompt template
-    template = pre_prompt + """CONTEXT:{context}
+    template = """CONTEXT:{context}
 
-    Question: {question}"""
+    Question: {question}
 
+    Answer: Just give a simple and precise answer. If the answer cannot be found in the context, respond with "Answer not found in context"."""
     prompt = ChatPromptTemplate.from_template(template)
 
 

@@ -22,7 +22,7 @@ async def ollama_qa(context: str, questions: list[str]):
     response = OllamaPromptTemplate.qa_with_ollama(context, questions)
 
     # Call the qa_with_ollama function from OllamaRoles.py
-    #response = OllamaRoles.qa_with_ollama(context, questions)
+    response = OllamaRoles.qa_with_ollama(context, questions)
 
 
     return response

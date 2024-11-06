@@ -2,8 +2,9 @@
 from llm.src.utilities.OllamaPipeline import OllamaPipeline
 from llm.src.conf.Configurations import logger
 from fastapi import HTTPException
+from llm.src.conf.Prompts import default_prompt1
 
-def qa_with_ollama(context: str, question: str):
+def qa_with_ollama(context: str, questions: list[str]):
     """
     Perform question answering using the Ollama model
     :param context: The context in which to answer the question.
@@ -15,36 +16,46 @@ def qa_with_ollama(context: str, question: str):
     model = OllamaPipeline().get_model()
     logger.info("Model initialized.")
 
-    # Define messages in the chat format with "system," "user," and "content"
-    messages = [
-        {"role": "system",
-         "content": "You are a helpful assistant. Provide a concise and precise answer. If the answer cannot be found in the context, respond with 'Answer not found in context'."},
-        {"role": "user", "content": "what is data science?"},
-        {"role": "assistant",
-         "content": "The capital of France is Paris. The Eiffel Tower is located in Paris. India is a country in Asia."}
-    ]
+    responses = []
 
-    # Invoke the model with the chat structure
-    try:
+    for question in questions:
+        # Define messages in the chat format with "system," "user," and "content"
+        message = [
+            {"role": "system",
+             "content": default_prompt1},
+            {"role": "user", "content": question},
+            {"role": "assistant",
+             "content": context}]
 
-        # Directly invoke the model with the formatted prompt
-        logger.info("invoking the model with the formatted prompt")
-        response = model.invoke(input=messages)
-        logger.info("response received from the model")
+        # Invoke the model with the chat structure
+        try:
+            # Directly invoke the model with the formatted prompt
+            logger.info("invoking the model with input message")
+            response = model.invoke(input=message)
+            logger.info("response received from the model")
 
-        return response
+            responses.append(response)
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"An error occurred during invocation: {e}")
 
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"An error occurred during invocation: {e}")
+    return responses
+
 
 
 if __name__ == "__main__":
 
-        sample_context = "The capital of France is Paris. The Eiffel Tower is located in Paris. India is a country in Asia."
-        sample_question = "What is capital of France?"
+    sample_context = "Artificial Intelligence (AI) refers to the simulation of human intelligence in machines designed to think and learn like humans. AI systems can perform tasks such as image recognition, natural language processing, decision-making, and autonomous driving. Machine learning (ML) is a subset of AI that allows computers to learn from data and improve their performance without being explicitly programmed. Deep learning, a type of machine learning, uses neural networks with many layers to analyze large datasets. AI has applications across various industries, including healthcare, finance, and entertainment, and continues to evolve as computing power increases"
 
-        res = qa_with_ollama(sample_context, sample_question)
+    Questions = [
+        "What is the difference between AI and machine learning?",
+        "How does deep learning work in artificial intelligence?",
+        "Who is the founder of AI?",  # Out of context
+        "What are the ethical concerns surrounding the use of AI in surveillance?"  # Out of context
+    ]
 
-        print(res)
+    res = qa_with_ollama(sample_context, Questions)
+
+    for answer, question in zip(res, Questions):
+        print(f"Question: {question}\nAnswer: {answer}\n")
 
 

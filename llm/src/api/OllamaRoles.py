@@ -35,11 +35,11 @@ def qa_with_ollama(context: str, questions: list[str]):
         response = model.invoke(input=message)
         logger.info("response received from the model")
 
-        responses.append(response)
+        return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred during invocation: {e}")
 
-    return responses
+
 
 
 
@@ -58,7 +58,8 @@ if __name__ == "__main__":
 
     res = qa_with_ollama(pdf_text, QUESTIONS)
 
-    for answer, Question in zip(res, QUESTIONS):
-        print(f"Question: {Question}\nAnswer: {answer}\n")
+    print(res)
+
+
 
 

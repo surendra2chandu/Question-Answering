@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3e65a829-1893-4eb1-aacf-42beb0c568f8" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/api/OllamaRoles.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/OllamaRoles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,19 +43,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Llama2PromptTemplate.executor": "Run",
-    "Python.OllamaPromptTemplate.executor": "Run",
-    "Python.OllamaRoles.executor": "Run",
-    "Python.Roberta.executor": "Run",
-    "Python.RobertaForPDF.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Llama2PromptTemplate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OllamaPromptTemplate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OllamaRoles.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Roberta.executor&quot;: &quot;Run&quot;,
+    &quot;Python.RobertaForPDF.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.OllamaPromptTemplate">
+}</component>
+  <component name="RunManager" selected="Python.OllamaRoles">
     <configuration name="Llama2PromptTemplate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Question-Answering" />
       <option name="ENV_FILES" value="" />
@@ -167,8 +168,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.OllamaPromptTemplate" />
         <item itemvalue="Python.OllamaRoles" />
+        <item itemvalue="Python.OllamaPromptTemplate" />
         <item itemvalue="Python.Llama2PromptTemplate" />
         <item itemvalue="Python.RobertaForPDF" />
         <item itemvalue="Python.Roberta" />
@@ -231,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730893998229</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update">
+      <option name="closed" value="true" />
+      <created>1730894782381</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730894782381</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

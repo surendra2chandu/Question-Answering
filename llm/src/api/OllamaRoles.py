@@ -3,6 +3,7 @@ from llm.src.utilities.OllamaPipeline import OllamaPipeline
 from llm.src.conf.Configurations import logger
 from fastapi import HTTPException
 from llm.src.conf.Prompts import default_prompt1
+import PyPDF2
 
 def qa_with_ollama(context: str, questions: list[str]):
     """
@@ -20,25 +21,23 @@ def qa_with_ollama(context: str, questions: list[str]):
 
 
 
-    for question in questions:
+    user_prompt = f"The question is: {questions} \n\n The context is: {context}"
+    # Define messages in the chat format with "system," "user," and "content"
+    message = [
+        {"role": "system",
+            "content": default_prompt1},
+        {"role": "user", "content": user_prompt}]
 
-        user_prompt = f"The question is: {question} \n\n The context is: {context}"
-        # Define messages in the chat format with "system," "user," and "content"
-        message = [
-            {"role": "system",
-             "content": default_prompt1},
-            {"role": "user", "content": user_prompt}]
+    # Invoke the model with the chat structure
+    try:
+        # Directly invoke the model with the formatted prompt
+        logger.info("invoking the model with input message")
+        response = model.invoke(input=message)
+        logger.info("response received from the model")
 
-        # Invoke the model with the chat structure
-        try:
-            # Directly invoke the model with the formatted prompt
-            logger.info("invoking the model with input message")
-            response = model.invoke(input=message)
-            logger.info("response received from the model")
-
-            responses.append(response)
-        except Exception as e:
-            raise HTTPException(status_code=500, detail=f"An error occurred during invocation: {e}")
+        responses.append(response)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"An error occurred during invocation: {e}")
 
     return responses
 
@@ -46,18 +45,20 @@ def qa_with_ollama(context: str, questions: list[str]):
 
 if __name__ == "__main__":
 
-    sample_context = "Artificial Intelligence (AI) refers to the simulation of human intelligence in machines designed to think and learn like humans. AI systems can perform tasks such as image recognition, natural language processing, decision-making, and autonomous driving. Machine learning (ML) is a subset of AI that allows computers to learn from data and improve their performance without being explicitly programmed. Deep learning, a type of machine learning, uses neural networks with many layers to analyze large datasets. AI has applications across various industries, including healthcare, finance, and entertainment, and continues to evolve as computing power increases"
+    pdf_text = ''
+    with open(r"C:\Docs\Doc1.pdf", 'rb') as pdf_file:
+        pdf_reader = PyPDF2.PdfReader(pdf_file)
+        pdf_text += str(pdf_reader.metadata)
+        for page_num in range(min(1, len(pdf_reader.pages))):
+            page = pdf_reader.pages[page_num]
+            pdf_text += page.extract_text()
 
-    Questions = [
-        "What is the difference between AI and machine learning?",
-        "How does deep learning work in artificial intelligence?",
-        "Who is the founder of AI?",  # Out of context
-        "What are the ethical concerns surrounding the use of AI in surveillance?"  # Out of context
-    ]
+    QUESTIONS = ["What is the title of the document?", "What is the creation date of the document?", "What is the version of the document?", "Does the document has CDRL number?", "Who is the authorizing agent of the document?"]
 
-    res = qa_with_ollama(sample_context, Questions)
 
-    for answer, Question in zip(res, Questions):
+    res = qa_with_ollama(pdf_text, QUESTIONS)
+
+    for answer, Question in zip(res, QUESTIONS):
         print(f"Question: {Question}\nAnswer: {answer}\n")
 
 

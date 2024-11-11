@@ -8,7 +8,7 @@ class OllamaPipeline:
         """
         # Load the Ollama model
         try:
-            self.model = OllamaLLM(model="llama3", temp=0.1)
+            self.model = OllamaLLM(model="llama3")
 
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"An error occurred while initializing the model: {e}")

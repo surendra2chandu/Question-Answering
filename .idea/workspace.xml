@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e65a829-1893-4eb1-aacf-42beb0c568f8" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/api_clients/llm_clients/OllamaClient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/routers/OllamaRouter.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/routers/OllamaRouter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/api/OllamaRoles.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/OllamaRoles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/conf/Prompts.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/conf/Prompts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/utilities/OllamaPipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/utilities/OllamaPipeline.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,12 +53,13 @@
     "Python.OllamaRoles.executor": "Run",
     "Python.Roberta.executor": "Run",
     "Python.RobertaForPDF.executor": "Run",
+    "Python.del.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.OllamaClient">
+  <component name="RunManager" selected="Python.OllamaRoles">
     <configuration name="Llama2PromptTemplate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Question-Answering" />
       <option name="ENV_FILES" value="" />
@@ -146,7 +148,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="RobertaForPDF" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="del" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Question-Answering" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -155,11 +157,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/question_answering_services/src/api" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/question_answering_services/src/api/RobertaForPDF.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/del.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.OllamaClient" />
         <item itemvalue="Python.OllamaRoles" />
+        <item itemvalue="Python.del" />
+        <item itemvalue="Python.OllamaClient" />
         <item itemvalue="Python.OllamaPromptTemplate" />
         <item itemvalue="Python.Llama2PromptTemplate" />
-        <item itemvalue="Python.RobertaForPDF" />
       </list>
     </recent_temporary>
   </component>
@@ -266,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731302805812</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update">
+      <option name="closed" value="true" />
+      <created>1731304612444</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731304612444</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

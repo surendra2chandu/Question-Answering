@@ -17,15 +17,28 @@ def qa_with_ollama(context: str, questions: list[str]):
     model = OllamaPipeline().get_model()
     logger.info("Model initialized.")
 
-    responses = []
+    examples = """
+        Example format:
+        Q: What is the title of the document?
+        A: Sample Document Title
 
+        Q: Who is the authorizing agent of the document?
+        A: Dr. John Doe.
+        
+        Q. Does the document has CDRL number?
+        A. Answer not found in the information provided.
 
+        Please respond in a similar format.
+        """
 
-    user_prompt = f"The question is: {questions} \n\n The context is: {context}"
+    system_prompt = f"{default_prompt1} \n\n {examples}"
+
+    # Define the user prompt with the question and context
+    user_prompt = f"The question is: {questions} \n\n The information provided is: {context}"
     # Define messages in the chat format with "system," "user," and "content"
     message = [
         {"role": "system",
-            "content": default_prompt1},
+            "content": system_prompt},
         {"role": "user", "content": user_prompt}]
 
     # Invoke the model with the chat structure

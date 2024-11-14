@@ -4,6 +4,8 @@ from llm.src.conf.Configurations import logger
 from fastapi import HTTPException
 from llm.src.conf.Prompts import default_prompt1
 import PyPDF2
+import os
+import re
 
 def qa_with_ollama(context: str, questions: list[str]):
     """
@@ -41,18 +43,22 @@ def qa_with_ollama(context: str, questions: list[str]):
             "content": system_prompt},
         {"role": "user", "content": user_prompt}]
 
+    prompt = f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+    {system_prompt}<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+    {user_prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>"""
+
     # Invoke the model with the chat structure
     try:
         # Directly invoke the model with the formatted prompt
         logger.info("invoking the model with input message")
-        response = model.invoke(input=message)
+        response = model.invoke(input=prompt)
         logger.info("response received from the model")
 
         return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred during invocation: {e}")
-
-
 
 
 
@@ -66,12 +72,14 @@ if __name__ == "__main__":
             page = pdf_reader.pages[page_num]
             pdf_text += page.extract_text()
 
-    QUESTIONS = ["What is the title of the document?", "What is the creation date of the document?", "What is the version of the document?", "Does the document has CDRL number?", "Who is the authorizing agent of the document?"]
-
+    QUESTIONS = ["What is the title of the document?", "What is the creation date of the document?",
+                 "What is the version of the document?", "Does the document has CDRL number?",
+                 "Who is the authorizing agent of the document?"]
 
     res = qa_with_ollama(pdf_text, QUESTIONS)
 
     print(res)
+
 
 
 

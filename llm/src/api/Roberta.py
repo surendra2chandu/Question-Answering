@@ -36,6 +36,14 @@ if __name__ == "__main__":
     sample_context = "The capital of France is Paris. The Eiffel Tower is located in Paris."
     sample_questions = ["What is the capital of France?", "what is tower name?"]
 
+    sample_context = "RELEASE/REVISION: 1.1 22 September 2021"
+
+    sample_questions = ["What is the date of the document?(Just give  date)", "WHAT IS THE DATE OF THE DOCUMENT?", "What is the date of the document?"]
+
+    #sample_questions = ["What is the date of the document?"]
+
+
+
     # Call the question_answering_from_text function
     logger.info("Calling the question_answering_from_text function")
     result = question_answering_from_text(sample_questions, sample_context)

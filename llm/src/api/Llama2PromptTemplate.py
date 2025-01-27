@@ -23,11 +23,10 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
     # Create a template for the prompt
     template = pre_prompt + "###CONTEXT:\n{context}\n" + "###QUESTION:\n{question}\n" + "[/INST]"
 
-    template = pre_prompt + "CONTEXT:\n\n{context}\n" + "Question : {question}" + "[\INST]"
+    #template = pre_prompt + "CONTEXT:\n\n{context}\n" + "Question : {question}" + "[\INST]"
 
 
     # Create a prompt template
-
     prompt = PromptTemplate(template=template, input_variables=["context", "question"])
 
     #print(prompt)
@@ -39,17 +38,21 @@ def llama2_chat_ggu_question_answering(context: str, questions: list[str]):
     # Generate the response from the model
     logger.info("Generating response from Llama2 model")
 
-    for question in questions:
-        res = llm.invoke(prompt.format(context=context, question=question, maxsize=2000)).strip()
-        response.append(res)
+    # for question in questions:
+    #     res = llm.invoke(prompt.format(context=context, question=question, maxsize=2000)).strip()
+    #
+    #     print(f"Question: {question}" + "\n" + f"Answer: {res}")
+    #     response.append(res)
 
-    return response
+    res = llm.invoke(prompt.format(context=context, question=questions, maxsize=2000)).strip()
+
+    return res
 
 
 if __name__ == "__main__":
     # Sample context and question
     sample_context = "The capital of France is Paris. The Eiffel Tower is located in Paris. India is a country in Asia."
-    sample_questions = [ "What is the capital of Germany?", "What is the capital of France?", "Where Eiffel Tower is Located?"]
+    sample_questions = [ "What is the capital of France?", "Where Eiffel Tower is Located?"]
 
     # Perform question answering using the Llama2ChatGGUF model
     sample_res = llama2_chat_ggu_question_answering(sample_context, sample_questions)

@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e65a829-1893-4eb1-aacf-42beb0c568f8" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/del/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d.py" beforeDir="false" afterPath="$PROJECT_DIR$/d.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/api/Llama2PromptTemplate.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/Llama2PromptTemplate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/api/Llama2WithProperTags.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/Llama2WithProperTags.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm/src/api/OllamaRoles.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/OllamaRoles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/Roberta.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/Roberta.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm/src/utilities/OllamaPipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/utilities/OllamaPipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +52,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.Configurations.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Llama2ForPDF.executor&quot;: &quot;Run&quot;,
     &quot;Python.Llama2PromptTemplate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Llama2WithProperTags.executor&quot;: &quot;Run&quot;,
     &quot;Python.OllamaClient.executor&quot;: &quot;Run&quot;,
     &quot;Python.OllamaPipeline.executor&quot;: &quot;Run&quot;,
     &quot;Python.OllamaPromptTemplate.executor&quot;: &quot;Run&quot;,
@@ -55,14 +63,23 @@
     &quot;Python.Roberta.executor&quot;: &quot;Run&quot;,
     &quot;Python.RobertaForPDF.executor&quot;: &quot;Run&quot;,
     &quot;Python.d.executor&quot;: &quot;Run&quot;,
+    &quot;Python.d1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.d2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.del (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.del.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PycharmProjects\Question-Answering\del" />
+      <recent name="C:\PycharmProjects\Question-Answering\llm\src\utilities" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.OllamaRoles">
-    <configuration name="OllamaPipeline" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Llama2ForPDF" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Question-Answering" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,11 +88,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src/utilities" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/question_answering_services/src/api" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/utilities/OllamaPipeline.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/question_answering_services/src/api/Llama2ForPDF.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Llama2WithProperTags" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Question-Answering" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src/api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/api/Llama2WithProperTags.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -106,7 +145,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Roberta" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="d1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Question-Answering" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,11 +154,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src/api" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/del" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/api/Roberta.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/del/d1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -128,7 +167,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="d" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="d2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Question-Answering" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -141,29 +180,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/d.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="del" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Question-Answering" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/del.py" />
+      <option name="SCRIPT_NAME" value="C:\PycharmProjects\Question-Answering\del\d2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -175,10 +192,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.OllamaRoles" />
-        <item itemvalue="Python.d" />
-        <item itemvalue="Python.del" />
-        <item itemvalue="Python.OllamaPipeline" />
-        <item itemvalue="Python.Roberta" />
+        <item itemvalue="Python.Llama2ForPDF" />
+        <item itemvalue="Python.d1" />
+        <item itemvalue="Python.d2" />
+        <item itemvalue="Python.Llama2WithProperTags" />
       </list>
     </recent_temporary>
   </component>
@@ -286,8 +303,35 @@
       <option name="project" value="LOCAL" />
       <updated>1731308425766</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update">
+      <option name="closed" value="true" />
+      <created>1731580918135</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1731580918135</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update">
+      <option name="closed" value="true" />
+      <created>1731580927857</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1731580927857</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />

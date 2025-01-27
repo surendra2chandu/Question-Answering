@@ -10,6 +10,7 @@ class OllamaPipeline:
         try:
             self.model = OllamaLLM(base_url="http://127.0.0.1:11434", model="llama3")
 
+
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"An error occurred while initializing the model: {e}")
 

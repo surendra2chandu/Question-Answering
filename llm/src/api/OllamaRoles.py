@@ -37,11 +37,6 @@ def qa_with_ollama(context: str, questions: list[str]):
 
     # Define the user prompt with the question and context
     user_prompt = f"The question is: {questions} \n\n The information provided is: {context}"
-    # Define messages in the chat format with "system," "user," and "content"
-    message = [
-        {"role": "system",
-            "content": system_prompt},
-        {"role": "user", "content": user_prompt}]
 
     prompt = f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
 
@@ -55,6 +50,7 @@ def qa_with_ollama(context: str, questions: list[str]):
         logger.info("invoking the model with input message")
         response = model.invoke(input=prompt)
         logger.info("response received from the model")
+        logger.info(f"response: {response}")
 
         return response
     except Exception as e:
@@ -76,9 +72,12 @@ if __name__ == "__main__":
                  "What is the version of the document?", "Does the document has CDRL number?",
                  "Who is the authorizing agent of the document?"]
 
+    QUESTIONS = ["What is the title of the document?"]
+
     res = qa_with_ollama(pdf_text, QUESTIONS)
 
     print(res)
+
 
 
 

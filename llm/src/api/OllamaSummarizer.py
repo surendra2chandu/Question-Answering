@@ -36,7 +36,6 @@ def summarize_with_ollama(context: str):
         f"{user_prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
     )
 
-    print(prompt)
     try:
         logger.info("Invoking the model with the input prompt.")
         response = model.invoke(input=prompt)

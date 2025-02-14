@@ -10,7 +10,7 @@ class OllamaClient:
         """
 
         # Define the URL for the API endpoint
-        url = "http://localhost:8001/llm/ollama/"
+        url = "http://localhost:8001/llm/ollama/question-answering/"
 
         pdf_text = ''
         with open(r"C:\Docs\Doc1.pdf", 'rb') as pdf_file:

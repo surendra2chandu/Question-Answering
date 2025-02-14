@@ -1,6 +1,6 @@
 # Importing necessary classes
 from fastapi import APIRouter
-from llm.src.api import OllamaPromptTemplate, OllamaRoles
+from llm.src.api import OllamaQA
 from pydantic import BaseModel
 
 # Initialize the router
@@ -18,7 +18,7 @@ class Prompt(BaseModel):
 
 
 # Define the request body model
-@router.post("/ollama/")
+@router.post("/ollama/question-answering/")
 async def ollama_qa(prompt: Prompt):
     """
     Perform question answering using the Ollama model
@@ -30,9 +30,8 @@ async def ollama_qa(prompt: Prompt):
     # Call the qa_with_ollama function from OllamaPromptTemplate.py
     # response = OllamaPromptTemplate.qa_with_ollama(context, questions)
 
-
-    # Call the qa_with_ollama function from OllamaRoles.py
-    response = OllamaRoles.qa_with_ollama(prompt.context, prompt.questions)
+    # Call the qa_with_ollama function from OllamaQA.py
+    response = OllamaQA.qa_with_ollama(prompt.context, prompt.questions)
 
 
     return response

@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e65a829-1893-4eb1-aacf-42beb0c568f8" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/del/__init__.py" afterDir="false" />
+    <list default="true" id="3e65a829-1893-4eb1-aacf-42beb0c568f8" name="Changes" comment="update UPDATE">
+      <change afterPath="$PROJECT_DIR$/docker-llm.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/d.py" beforeDir="false" afterPath="$PROJECT_DIR$/d.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/Llama2PromptTemplate.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/Llama2PromptTemplate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/Llama2WithProperTags.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/Llama2WithProperTags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/OllamaRoles.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/OllamaRoles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/utilities/OllamaPipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/utilities/OllamaPipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_clients/llm_clients/OllamaClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_clients/llm_clients/OllamaClient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/api/OllamaRoles.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/OllamaQA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/routers/OllamaRouter.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/routers/OllamaRouter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Dockerfile" />
         <option value="Python Script" />
       </list>
     </option>
@@ -50,35 +47,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Configurations.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Llama2ForPDF.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Llama2PromptTemplate.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Llama2WithProperTags.executor&quot;: &quot;Run&quot;,
-    &quot;Python.OllamaClient.executor&quot;: &quot;Run&quot;,
-    &quot;Python.OllamaPipeline.executor&quot;: &quot;Run&quot;,
-    &quot;Python.OllamaPromptTemplate.executor&quot;: &quot;Run&quot;,
-    &quot;Python.OllamaRoles.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Roberta.executor&quot;: &quot;Run&quot;,
-    &quot;Python.RobertaForPDF.executor&quot;: &quot;Run&quot;,
-    &quot;Python.d.executor&quot;: &quot;Run&quot;,
-    &quot;Python.d1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.d2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.del (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.del.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Configurations.executor": "Run",
+    "Python.Llama2ForPDF.executor": "Run",
+    "Python.Llama2PromptTemplate.executor": "Run",
+    "Python.Llama2WithProperTags.executor": "Run",
+    "Python.OllamaClient.executor": "Run",
+    "Python.OllamaPipeline.executor": "Run",
+    "Python.OllamaPromptTemplate.executor": "Run",
+    "Python.OllamaRoles.executor": "Run",
+    "Python.OllamaSummarizer  (1).executor": "Run",
+    "Python.Roberta.executor": "Run",
+    "Python.RobertaForPDF.executor": "Run",
+    "Python.d.executor": "Run",
+    "Python.d1.executor": "Run",
+    "Python.d2.executor": "Run",
+    "Python.del (1).executor": "Run",
+    "Python.del.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\PycharmProjects\Question-Answering\del" />
       <recent name="C:\PycharmProjects\Question-Answering\llm\src\utilities" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.OllamaRoles">
+  <component name="RunManager" selected="Python.OllamaSummarizer  (1)">
     <configuration name="Llama2ForPDF" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Question-Answering" />
       <option name="ENV_FILES" value="" />
@@ -101,7 +100,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Llama2WithProperTags" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="OllamaQA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Question-Answering" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,7 +113,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/api/Llama2WithProperTags.py" />
+      <option name="SCRIPT_NAME" value="C:\PycharmProjects\Question-Answering\llm\src\api\OllamaQA.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -123,7 +122,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="OllamaRoles" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="OllamaSummarizer  (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Question-Answering" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,7 +135,29 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/api/OllamaRoles.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/api/OllamaSummarizer .py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="OllamaSummarizer " type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Question-Answering" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src/api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\PycharmProjects\Question-Answering\llm\src\api\OllamaSummarizer .py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -167,35 +188,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="d2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Question-Answering" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\PycharmProjects\Question-Answering\del\d2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.OllamaRoles" />
+        <item itemvalue="Python.OllamaSummarizer  (1)" />
+        <item itemvalue="Python.OllamaSummarizer " />
+        <item itemvalue="Python.OllamaQA" />
         <item itemvalue="Python.Llama2ForPDF" />
         <item itemvalue="Python.d1" />
-        <item itemvalue="Python.d2" />
-        <item itemvalue="Python.Llama2WithProperTags" />
       </list>
     </recent_temporary>
   </component>
@@ -319,7 +318,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731580927857</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update UPDATE">
+      <option name="closed" value="true" />
+      <created>1737984882599</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1737984882599</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -335,6 +342,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update UPDATE" />
+    <option name="LAST_COMMIT_MESSAGE" value="update UPDATE" />
   </component>
 </project>

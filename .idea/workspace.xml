@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3e65a829-1893-4eb1-aacf-42beb0c568f8" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/OllamaSummarizer .py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/OllamaSummarizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/routers/OllamaSummarizerRouter.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/routers/OllamaSummarizerRouter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/api/OllamaSummarizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/OllamaSummarizer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,7 +337,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739521657263</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update">
+      <option name="closed" value="true" />
+      <created>1739532005852</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1739532005852</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -24,7 +24,7 @@ def summarize_with_ollama(context: str):
     logger.info("Model initialized.")
 
     # System prompt for summarization
-    system_prompt = "Write a concise summary of the following context."
+    system_prompt = "Write a concise summary of the following context use paragraph format."
 
     # Construct the user prompt
     user_prompt = f"Context: {context}"
@@ -50,7 +50,7 @@ def summarize_with_ollama(context: str):
 if __name__ == "__main__":
 
     # Read the PDF file
-    pdf_path = r"C:\Docs\sample_doc.pdf"
+    pdf_path = r"C:\Docs\B.pdf"
     # Read the PDF file
     reader = PdfReader(pdf_path)
 

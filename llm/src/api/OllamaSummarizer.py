@@ -38,7 +38,7 @@ def summarize_with_ollama(context: str):
 
     try:
         logger.info("Invoking the model with the input prompt.")
-        response = model.invoke(input=prompt)
+        response = model.invoke(input=prompt, options={"num_ctx": 2048})
         logger.info("Response received from the model.")
 
         return response

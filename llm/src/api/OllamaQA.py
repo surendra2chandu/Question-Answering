@@ -4,8 +4,8 @@ from llm.src.conf.Configurations import logger
 from fastapi import HTTPException
 from llm.src.conf.Prompts import default_prompt1
 import PyPDF2
-import os
-import re
+
+
 
 def qa_with_ollama(context: str, questions: list[str]):
     """
@@ -26,7 +26,7 @@ def qa_with_ollama(context: str, questions: list[str]):
 
         Q: Who is the authorizing agent of the document?
         A: Dr. John Doe.
-        
+
         Q. Does the document has CDRL number?
         A. Answer not found in the information provided.
 
@@ -57,11 +57,10 @@ def qa_with_ollama(context: str, questions: list[str]):
         raise HTTPException(status_code=500, detail=f"An error occurred during invocation: {e}")
 
 
-
 if __name__ == "__main__":
 
     pdf_text = ''
-    with open(r"C:\Docs\Doc1.pdf", 'rb') as pdf_file:
+    with open(r"C:\Docs\sample.pdf", 'rb') as pdf_file:
         pdf_reader = PyPDF2.PdfReader(pdf_file)
         pdf_text += str(pdf_reader.metadata)
         for page_num in range(min(1, len(pdf_reader.pages))):
@@ -72,14 +71,10 @@ if __name__ == "__main__":
                  "What is the version of the document?", "Does the document has CDRL number?",
                  "Who is the authorizing agent of the document?"]
 
-    QUESTIONS = ["What is the title of the document?"]
+    QUESTION = ["What is the title of the document?"]
 
-    res = qa_with_ollama(pdf_text, QUESTIONS)
+    text="New Delhi is the capital of India. It is located in Asia. The population of India is 1.4 billion."
+    question = ["What is the capital of India?"]
+    res = qa_with_ollama(pdf_text, QUESTION)
 
     print(res)
-
-
-
-
-
-

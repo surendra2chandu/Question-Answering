@@ -8,7 +8,7 @@ class OllamaPipeline:
         """
         # Load the Ollama model
         try:
-            self.model = OllamaLLM(base_url="http://127.0.0.1:11434", model="llama3")
+            self.model = OllamaLLM(base_url="http://127.0.0.1:11434", model="llama3.2:1b")
 
 
         except Exception as e:

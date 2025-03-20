@@ -1,6 +1,6 @@
 # Importing necessary classes
 from llm.src.conf.Configurations import logger
-from llm.src.conf.Prompts import default_prompt2, default_prompt1, default_prompt3, default_prompt4
+from llm.src.conf.Prompts import default_prompt2
 from llama_cpp import Llama
 
 

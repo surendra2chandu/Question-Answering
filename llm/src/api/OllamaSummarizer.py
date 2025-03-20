@@ -2,8 +2,7 @@
 from llm.src.utilities.OllamaPipeline import OllamaPipeline
 from llm.src.conf.Configurations import logger
 from fastapi import HTTPException
-from PyPDF2 import PdfReader
-import re
+from data import text
 
 def summarize_with_ollama(context: str):
     """
@@ -18,6 +17,9 @@ def summarize_with_ollama(context: str):
     Raises:
         HTTPException: If an error occurs during model invocation.
     """
+    l = len(context)
+
+    t1 = context.split()
 
     # Initialize the Ollama model
     model = OllamaPipeline().get_model()
@@ -38,7 +40,7 @@ def summarize_with_ollama(context: str):
 
     try:
         logger.info("Invoking the model with the input prompt.")
-        response = model.invoke(input=prompt, options={"num_ctx": 2048})
+        response = model.invoke(input=prompt, options={"num_ctx": 131072})
         logger.info("Response received from the model.")
 
         return response
@@ -49,26 +51,7 @@ def summarize_with_ollama(context: str):
 
 if __name__ == "__main__":
 
-    # Read the PDF file
-    pdf_path = r"C:\Docs\B.pdf"
-    # Read the PDF file
-    reader = PdfReader(pdf_path)
-
-    # Initialize the text
-    text = ""
-
-    # Iterate over the pages
-    for page_number in range(len(reader.pages)):
-        text += reader.pages[page_number].extract_text()
-
-        # Remove extra spaces
-    text = re.sub(r'\s+', ' ', text.strip())
-    # Remove all extra special characters, keeping only one
-    text = re.sub(r'([^\w\s])\1+', r'\1', text)
-    # Remove any characters that aren't alphanumeric, spaces, or single special characters
-    text = re.sub(r'[^\w\s.,?!]', '', text)
-
-    text = ' '.join(re.sub(r'[^A-Za-z0-9\s]', '', text).split())
+    l = len(text)
 
     # Generate the summary using the Ollama model
     summary = summarize_with_ollama(text)

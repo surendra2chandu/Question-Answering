@@ -2,7 +2,7 @@
 from fastapi import APIRouter
 from llm.src.api.Llama2PromptTemplate import llama2_chat_ggu_question_answering
 from pydantic import BaseModel
-from typing import Optional
+
 #from llm.src.conf.Configurations import default_prompt
 
 # Initialize the router

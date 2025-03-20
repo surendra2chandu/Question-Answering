@@ -1,5 +1,5 @@
 # Importing necessary classes
-from llm.src.conf.Configurations import logger, default_prompt1, default_prompt2
+from llm.src.conf.Configurations import logger, default_prompt2
 from llm.src.utilities.Llama2Pipeline import Llama2Pipeline
 
 

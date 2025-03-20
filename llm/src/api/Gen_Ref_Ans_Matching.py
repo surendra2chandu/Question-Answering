@@ -25,6 +25,7 @@ class GenRefAnsMatching:
             {default_prompt1}<|eot_id|><|start_header_id|>user<|end_header_id|>
             {user_prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>"""
 
+
             try:
                 logger.info(f"Invoking the model with input message for question: {question}")
                 response = self.model.invoke(input=prompt)

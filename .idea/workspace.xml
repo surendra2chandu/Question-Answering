@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3e65a829-1893-4eb1-aacf-42beb0c568f8" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/api/Gen_Ref_Ans_Matching.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/Gen_Ref_Ans_Matching.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm/src/api/OllamaQA.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/OllamaQA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -367,7 +368,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740394308412</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="update">
+      <option name="closed" value="true" />
+      <created>1742485166159</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1742485166159</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -75,6 +75,6 @@ if __name__ == "__main__":
 
     text="New Delhi is the capital of India. It is located in Asia. The population of India is 1.4 billion."
     question = ["What is the capital of India?"]
-    res = qa_with_ollama(pdf_text, QUESTION)
+    res = qa_with_ollama(text, question)
 
     print(res)

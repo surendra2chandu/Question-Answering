@@ -5,34 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e65a829-1893-4eb1-aacf-42beb0c568f8" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/Question-Answering.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Question-Answering.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/Llama2CppPython.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/Llama2CppPython.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/Llama2PromptTemplate.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/Llama2PromptTemplate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/Llama2Roles.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/Llama2Roles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/Llama2Tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/Llama2Tags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/Llama2WithProperTags.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/Llama2WithProperTags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/OllamaPromptTemplate.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/OllamaPromptTemplate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm/src/api/OllamaQA.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/OllamaQA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/api/OllamaSummarizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/api/OllamaSummarizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/routers/Llama2Router.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/routers/Llama2Router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/src/utilities/OllamaPipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/utilities/OllamaPipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/api/Llama2ForPDF.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/api/Llama2ForText.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/api/RobertaForPDF.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/api/RobertaForText.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/conf/Configurations.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/routers/Llama2RouterForPDF.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/routers/Llama2RouterForText.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/routers/RobertaRouterForText.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/routers/RobertafRouterForPDF.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/tests/TESTRobertaForText.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/utilities/FileDataExtractor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/utilities/InputValidations.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/utilities/Llama2ServiceManager.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_answering_services/src/utilities/QAServiceManager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/conf/Configurations.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/conf/Configurations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/src/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,34 +47,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Configurations.executor": "Run",
-    "Python.Llama2ForPDF.executor": "Run",
-    "Python.Llama2PromptTemplate.executor": "Run",
-    "Python.Llama2WithProperTags.executor": "Run",
-    "Python.OllamaClient.executor": "Run",
-    "Python.OllamaPipeline.executor": "Run",
-    "Python.OllamaPromptTemplate.executor": "Run",
-    "Python.OllamaQA (1).executor": "Run",
-    "Python.OllamaRoles.executor": "Run",
-    "Python.OllamaSummarizer  (1).executor": "Run",
-    "Python.OllamaSummarizer.executor": "Debug",
-    "Python.Roberta.executor": "Run",
-    "Python.RobertaForPDF.executor": "Run",
-    "Python.d.executor": "Run",
-    "Python.d1.executor": "Run",
-    "Python.d2.executor": "Run",
-    "Python.del (1).executor": "Run",
-    "Python.del.executor": "Run",
-    "Python.tf_idf_with_langchain.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Question-Answering/llm/src/api",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Configurations.executor&quot;: &quot;Run&quot;,
+    &quot;Python.GenRefAnsMatching (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.GenRefAnsMatchingRouter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Gen_Ref_Ans_Matching.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Llama2ForPDF.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Llama2PromptTemplate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Llama2WithProperTags.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OllamaClient.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OllamaPipeline.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OllamaPromptTemplate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OllamaQA (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.OllamaRoles.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OllamaSummarizer  (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.OllamaSummarizer.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.Roberta.executor&quot;: &quot;Run&quot;,
+    &quot;Python.RobertaForPDF.executor&quot;: &quot;Run&quot;,
+    &quot;Python.d.executor&quot;: &quot;Run&quot;,
+    &quot;Python.d1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.d2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.del (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.del.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tf_idf_with_langchain.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Question-Answering/llm/src/api&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Question-Answering\llm\src\api" />
@@ -110,96 +90,8 @@
       <recent name="C:\PycharmProjects\Question-Answering\llm\src\utilities" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.OllamaSummarizer">
-    <configuration name="OllamaPipeline" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Question-Answering" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src/utilities" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/utilities/OllamaPipeline.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="OllamaQA (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Question-Answering" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src/api" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/api/OllamaQA.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="OllamaQA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Question-Answering" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src/api" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\PycharmProjects\Question-Answering\llm\src\api\OllamaQA.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="OllamaSummarizer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Question-Answering" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src/api" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/api/OllamaSummarizer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tf_idf_with_langchain" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.GenRefAnsMatching (1)">
+    <configuration name="Configurations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Question-Answering" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -212,7 +104,95 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/conf/tf_idf_with_langchain.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/conf/Configurations.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GenRefAnsMatching (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Question-Answering" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src/api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/api/GenRefAnsMatching.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GenRefAnsMatching" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Question-Answering" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src/api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:\Question-Answering\llm\src\api\GenRefAnsMatching.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GenRefAnsMatchingRouter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Question-Answering" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src/routers" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/routers/GenRefAnsMatchingRouter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Question-Answering" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/llm/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/llm/src/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -223,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.OllamaSummarizer" />
-        <item itemvalue="Python.OllamaQA (1)" />
-        <item itemvalue="Python.OllamaPipeline" />
-        <item itemvalue="Python.tf_idf_with_langchain" />
-        <item itemvalue="Python.OllamaQA" />
+        <item itemvalue="Python.GenRefAnsMatching (1)" />
+        <item itemvalue="Python.GenRefAnsMatchingRouter" />
+        <item itemvalue="Python.Configurations" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.GenRefAnsMatching" />
       </list>
     </recent_temporary>
   </component>

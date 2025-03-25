@@ -75,9 +75,9 @@ if __name__ == "__main__":
 
 
     context = "The capital of india is new delhi. And it is located in asia. in india we have so many historical places will be there. "
-    QUESTION =["Where india is located?"]
+    question =["Where india is located?"]
 
-    res = qa_with_ollama(context, QUESTION)
+    res = qa_with_ollama(context, question)
 
     print(res)
 

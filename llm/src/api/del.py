@@ -71,24 +71,19 @@ class DocumentSummarizer:
             return_intermediate_steps=False,
         )
 
-    def summarize(self, docs):
+    def summarize(self, text):
         """
-        Summarizes a large document by splitting it into chunks, processing it, and reducing it to key themes.
+        Summarizes a large text by splitting it into chunks, processing it, and reducing it to key themes.
 
-        :param docs: List of document strings to summarize.
+        :param text: A long text string to summarize.
         :return: A consolidated summary string.
         """
-        split_docs = self.text_splitter.split_documents(docs)
+        split_docs = self.text_splitter.create_documents([text])
         summary = self.map_reduce_chain.run(split_docs)
         return summary
 
-if __name__ == "__main__":
-
-    # Example Usage:
-    summarizer = DocumentSummarizer()
-    list_of_documents = [
-        "This is a document about cats. Cats are furry animals that like to sleep all day.",
-        "This is a document about dogs. Dogs are loyal animals that like to play fetch.",
-    ]
-    summar = summarizer.summarize(list_of_documents)
-
+# Example Usage:
+# summarizer = DocumentSummarizer()
+# large_text = """Your long document text goes here."""
+# summary = summarizer.summarize(large_text)
+# print(summary)

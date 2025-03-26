@@ -6,6 +6,7 @@ from llm.src.conf.Prompts import default_prompt1
 import PyPDF2
 
 
+
 def qa_with_ollama(context: str, questions: list[str]):
     """
     Perform question answering using the Ollama model
@@ -25,7 +26,7 @@ def qa_with_ollama(context: str, questions: list[str]):
 
         Q: Who is the authorizing agent of the document?
         A: Dr. John Doe.
-        
+
         Q. Does the document has CDRL number?
         A. Answer not found in the information provided.
 
@@ -56,7 +57,6 @@ def qa_with_ollama(context: str, questions: list[str]):
         raise HTTPException(status_code=500, detail=f"An error occurred during invocation: {e}")
 
 
-
 if __name__ == "__main__":
 
     pdf_text = ''
@@ -73,16 +73,8 @@ if __name__ == "__main__":
 
     QUESTION = ["What is the title of the document?"]
 
-
-    context = "The capital of india is new delhi. And it is located in asia. in india we have so many historical places will be there. "
-    question =["Where india is located?"]
-
-    res = qa_with_ollama(context, question)
+    text="New Delhi is the capital of India. It is located in Asia. The population of India is 1.4 billion."
+    question = ["What is the capital of India?"]
+    res = qa_with_ollama(text, question)
 
     print(res)
-
-
-
-
-
-

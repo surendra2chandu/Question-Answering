@@ -4,6 +4,7 @@ from llm.src.conf.Configurations import logger
 from fastapi import HTTPException
 from PyPDF2 import PdfReader
 import re
+from multiprocessing import Pool
 
 def summarize_with_ollama(context: str):
     """
@@ -24,7 +25,7 @@ def summarize_with_ollama(context: str):
     logger.info("Model initialized.")
 
     # System prompt for summarization
-    system_prompt = "Write a concise summary of the following context use paragraph format."
+    system_prompt = "Write a concise summary of the following context in paragraph format."
 
     # Construct the user prompt
     user_prompt = f"Context: {context}"
@@ -40,18 +41,51 @@ def summarize_with_ollama(context: str):
         logger.info("Invoking the model with the input prompt.")
         response = model.invoke(input=prompt, options={"num_ctx": 4000})
         logger.info("Response received from the model.")
-
         return response
     except Exception as e:
         logger.error(f"Error during model invocation: {e}")
         raise HTTPException(status_code=500, detail=f"An error occurred during invocation: {e}")
 
 
-if __name__ == "__main__":
+def split_text(text, chunk_size=2000):
+    """
+    Splits the input text into smaller chunks.
 
+    Args:
+        text (str): The full context to be split.
+        chunk_size (int): The size of each chunk.
+
+    Returns:
+        list: List of text chunks.
+    """
+    return [text[i:i + chunk_size] for i in range(0, len(text), chunk_size)]
+
+
+def map_reduce_summarization(text):
+    """
+    Processes the text using MapReduce and summarizes each chunk.
+
+    Args:
+        text (str): The context to be summarized.
+
+    Returns:
+        str: The final summary after MapReduce processing.
+    """
+    # Split the text into smaller chunks
+    text_chunks = split_text(text)
+
+    # Use multiprocessing to process chunks
+    with Pool(processes=4) as pool:
+        summaries = pool.map(summarize_with_ollama, text_chunks)
+
+    # Combine the results into a final summary
+    final_summary = " ".join(summaries)
+    return final_summary
+
+
+if __name__ == "__main__":
     # Read the PDF file
-    pdf_path = r"C:\Docs\B.pdf"
-    # Read the PDF file
+    pdf_path = r"C:\Docs\sample.pdf"
     reader = PdfReader(pdf_path)
 
     # Initialize the text
@@ -61,16 +95,14 @@ if __name__ == "__main__":
     for page_number in range(len(reader.pages)):
         text += reader.pages[page_number].extract_text()
 
-        # Remove extra spaces
+    # Clean up the extracted text
     text = re.sub(r'\s+', ' ', text.strip())
-    # Remove all extra special characters, keeping only one
     text = re.sub(r'([^\w\s])\1+', r'\1', text)
-    # Remove any characters that aren't alphanumeric, spaces, or single special characters
     text = re.sub(r'[^\w\s.,?!]', '', text)
-
     text = ' '.join(re.sub(r'[^A-Za-z0-9\s]', '', text).split())
 
-    # Generate the summary using the Ollama model
-    summary = summarize_with_ollama(text)
-    print(summary)
+    l = len(text)
 
+    # Generate the summary using MapReduce approach
+    final_summary = map_reduce_summarization(text)
+    print(final_summary)

@@ -1,8 +1,7 @@
 # Importing necessary classes
-from sys import maxsize
 
 from llm.src.conf.Configurations import logger
-from llm.src.conf.Prompts import default_prompt2, default_prompt1, default_prompt3, default_prompt4
+from llm.src.conf.Prompts import default_prompt1
 from langchain_core.prompts import PromptTemplate
 from llm.src.utilities.Llama2Pipeline import Llama2Pipeline
 

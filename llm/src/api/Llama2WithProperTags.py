@@ -1,5 +1,5 @@
 from llm.src.utilities.Llama2Pipeline import Llama2Pipeline
-from llm.src.conf.Prompts import default_prompt2, default_prompt1, default_prompt3, default_prompt4, default_prompt
+from llm.src.conf.Prompts import default_prompt1, default_prompt
 llm = Llama2Pipeline().get_llm_model()
 
 def get_model_response(user_prompt, system_prompt, context, questions):

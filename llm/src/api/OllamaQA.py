@@ -36,7 +36,7 @@ def qa_with_ollama(context: str, questions: list[str]):
     system_prompt = f"{default_prompt1} \n\n {examples}"
 
     # Define the user prompt with the question and context
-    user_prompt = f"The question is: {questions} \n\n The information provided is: {context}"
+    user_prompt = f"The questions are: {questions} \n\n The information provided is: {context}"
 
     prompt = f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
 

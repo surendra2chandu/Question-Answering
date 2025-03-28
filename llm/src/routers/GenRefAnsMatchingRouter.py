@@ -12,17 +12,17 @@ router = APIRouter(tags=["GenRefAnsMatching"])
 @router.post("/Gen/Ref/Similarity_Score/")
 
 # Define the function to calculate similarity scores between generated answers and reference answers
-async def get_ans(text: str, file: UploadFile = File(...)):
+async def get_ans(context: str, file: UploadFile = File(...)):
 
     """
     Function to calculate similarity scores between generated answers and reference answers
-    :param text: The context for the questions
+    :param context: The context for the questions
     :param file: The file containing questions and reference answers`
     :return: The response from the service
     """
 
     # Calculate similarity scores between generated answers and reference answers
-    res_df = GenRefAnsMatching().process_questions(text, file)
+    res_df = GenRefAnsMatching().process_questions(context, file)
 
     # Convert the resulting DataFrame to a CSV format in memory
     csv_buffer = io.StringIO()
@@ -31,6 +31,6 @@ async def get_ans(text: str, file: UploadFile = File(...)):
 
     # Return the CSV content as a streaming response for download
     return StreamingResponse(csv_buffer, media_type="text/csv",
-                             headers={"Content-Disposition": "attachment; filename=similarities.csv"})
+                             headers={"Content-Disposition": "attachment; filename=similarity-scores.csv"})
 
 

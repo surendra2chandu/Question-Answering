@@ -23,3 +23,22 @@ class OllamaPipeline:
 
         # Return the Ollama model
         return self.model
+
+    def get_model2(self):
+        """
+        This function returns the Ollama model.
+        :return: Ollama model
+        """
+
+        # Return the Ollama model
+        return self.model2
+
+
+    def get_model3(self):
+        """
+        This function returns the Ollama model.
+        :return: Ollama model
+        """
+
+        # Return the Ollama model
+        return self.model3
